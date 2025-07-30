@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs1r2trlnwo7h"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f1gd0"]
+radius = 1.0
+height = 28.0
+
+[node name="Worm" type="Node2D"]
+
+[node name="Worm_Sprite" type="AnimatedSprite2D" parent="."]
+
+[node name="Worm_Collision" type="CollisionShape2D" parent="Worm_Sprite"]
+rotation = 1.57572
+shape = SubResource("CapsuleShape2D_f1gd0")
