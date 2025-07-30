@@ -11,8 +11,22 @@ config_version=5
 [application]
 
 config/name="gmtk-game-jam-2025-project"
+run/main_scene="uid://dvvpu8apv1uqc"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SignalBus="*res://autoload/signal_bus.gd"
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
 
 [rendering]
 
