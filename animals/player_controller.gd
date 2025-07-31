@@ -1,7 +1,7 @@
 class_name PlayerController
 extends Controller
 
-func _process(delta: float) -> void:	
+func _physics_process(delta: float) -> void:	
 	if enabled:
 		# Process commands and send it to the character
 		var commands : CommandPackage = CommandPackage.new()
