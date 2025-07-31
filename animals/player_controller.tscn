@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dop7dnv405kgo"]
+
+[ext_resource type="Script" uid="uid://d0cnar444itwl" path="res://animals/player_controller.gd" id="1_yq4vc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yq4vc"]
+
+[node name="PlayerController" type="Node2D"]
+script = ExtResource("1_yq4vc")
+
+[node name="InteractionRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRange"]
+shape = SubResource("RectangleShape2D_yq4vc")
+debug_color = Color(0.818637, 0.244335, 0.798089, 0.42)
+
+[node name="Camera2D" type="Camera2D" parent="."]

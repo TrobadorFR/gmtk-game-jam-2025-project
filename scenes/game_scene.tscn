@@ -1,10 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://f6rxbf1r4663"]
+[gd_scene load_steps=5 format=3 uid="uid://f6rxbf1r4663"]
 
 [ext_resource type="PackedScene" uid="uid://b3tbx18hoxit5" path="res://world/world.tscn" id="1_w5aja"]
 [ext_resource type="PackedScene" uid="uid://dbk8y2jp2tlab" path="res://animals/character_manager.tscn" id="2_onqr8"]
+[ext_resource type="PackedScene" uid="uid://b64tc37q3gcnw" path="res://animals/character.tscn" id="3_ycayy"]
+[ext_resource type="Script" uid="uid://d0cnar444itwl" path="res://animals/player_controller.gd" id="4_bw6k5"]
 
 [node name="GameScene" type="Node"]
 
 [node name="World" parent="." instance=ExtResource("1_w5aja")]
 
 [node name="CharacterManager" parent="." instance=ExtResource("2_onqr8")]
+
+[node name="Character" parent="CharacterManager" instance=ExtResource("3_ycayy")]
+position = Vector2(440, 188)
+
+[node name="PlayerController" type="Node" parent="."]
+script = ExtResource("4_bw6k5")
+metadata/_custom_type_script = "uid://d0cnar444itwl"

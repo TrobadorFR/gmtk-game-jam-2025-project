@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6sylqveyne31"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ku4rg"]
+size = Vector2(760, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jkpt"]
+size = Vector2(242, 138)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_abcqb"]
+radius = 103.078
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(576, 550)
+shape = SubResource("RectangleShape2D_ku4rg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(243, 397)
+shape = SubResource("RectangleShape2D_8jkpt")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(923, 544)
+shape = SubResource("CircleShape2D_abcqb")

@@ -28,6 +28,12 @@ version_control/autoload_on_startup=true
 
 enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
 
+[layer_names]
+
+2d_physics/layer_1="Character"
+2d_physics/layer_2="Level"
+2d_physics/layer_3="Interactable"
+
 [rendering]
 
 renderer/rendering_method="mobile"
