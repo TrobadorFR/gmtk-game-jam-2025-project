@@ -1,7 +1,12 @@
 class_name PlayerController
 extends Controller
 
-func _process(delta: float) -> void:	
+func _physics_process(delta: float) -> void:
+	# IMPORTANT:
+	# I am *fairly certain* that this method causes an issue due to the order of
+	# physics_process calls by different nodes being incertain.
+	# However, I can't see them, and _process was worse. For now, I'm leaving
+	# this as it is.
 	if enabled:
 		# Process commands and send it to the character
 		var commands : CommandPackage = CommandPackage.new()
