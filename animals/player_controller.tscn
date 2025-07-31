@@ -13,5 +13,3 @@ script = ExtResource("1_yq4vc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRange"]
 shape = SubResource("RectangleShape2D_yq4vc")
 debug_color = Color(0.818637, 0.244335, 0.798089, 0.42)
-
-[node name="Camera2D" type="Camera2D" parent="."]

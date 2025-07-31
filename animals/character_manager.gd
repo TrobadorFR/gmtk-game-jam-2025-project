@@ -6,6 +6,7 @@ extends Node2D
 @onready var characters := get_children()
 var player_controller : PlayerController
 var starting_character : Character
+@onready var camera := $"../PhantomCamera2D"
 
 func _ready(): 
 	SignalBus.connect("switch_player_character", switch_player_character)
@@ -41,6 +42,8 @@ func switch_player_character(character: Character):
 	player_controller.global_position = new_char.global_position
 	# we can shoot a signal here if we want player_controller to do things
 	# once it receives its new character.
+	
+	camera.follow_target = new_char
 	
 	# reactivate ai on old char
 	old_char.ai_controller.enabled = true
