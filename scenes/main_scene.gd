@@ -14,6 +14,9 @@ func _ready():
 	current_scene = $GameScene # Probably could stand to not be hard coded but eh
 	SignalBus.connect("change_scene", load_scene)
 	
+	# Initialize RNG.
+	randomize()
+	
 ## Unload the current scene. 
 ## We split this from load_scene() so that we can do things before it
 ## if we want to, such as a fade in.
