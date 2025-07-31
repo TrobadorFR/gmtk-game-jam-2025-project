@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://f6rxbf1r4663"]
 
-[ext_resource type="PackedScene" uid="uid://b3tbx18hoxit5" path="res://world/world.tscn" id="1_w5aja"]
+[ext_resource type="PackedScene" uid="uid://b3tbx18hoxit5" path="res://scenes/world.tscn" id="1_w5aja"]
 [ext_resource type="PackedScene" uid="uid://dbk8y2jp2tlab" path="res://animals/character_manager.tscn" id="2_onqr8"]
 
 [node name="GameScene" type="Node"]
