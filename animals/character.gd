@@ -1,4 +1,4 @@
-class_name Characterw
+class_name Character
 extends CharacterBody2D
 
 @export var SPEED = 300.0
