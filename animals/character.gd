@@ -9,32 +9,28 @@ extends CharacterBody2D
 @onready var ai_controller := $BaseAIController
 
 ## Commands received from controller
-class CommandPackage extends RefCounted: # RAAH THIS SUCKS
-	var jump : bool = false
-	var interact : bool = false
-	## Movement axis obtained from controller
-	var movement : float = 0.0
-
-var commands : CommandPackage = CommandPackage.new()
+var commands : CommandPackage
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	if commands: 
+		# Add the gravity.
+		if not is_on_floor():
+			velocity += get_gravity() * delta
 
-	# Handle jump.
-	if commands.jump and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		# Handle jump.
+		if commands.jump and is_on_floor():
+			velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = commands.movement
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		# Get the input direction and handle the movement/deceleration.
+		# As good practice, you should replace UI actions with custom gameplay actions.
+		var direction = commands.movement
+		if direction:
+			velocity.x = direction * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	move_and_slide()
+		move_and_slide()
+		commands = null
 
 func jump():
 	if is_on_floor():
