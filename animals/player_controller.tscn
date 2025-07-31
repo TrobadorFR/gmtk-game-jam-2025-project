@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d0cnar444itwl" path="res://animals/player_controller.gd" id="1_yq4vc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yq4vc"]
+size = Vector2(53, 42)
 
 [node name="PlayerController" type="Node2D"]
 script = ExtResource("1_yq4vc")
