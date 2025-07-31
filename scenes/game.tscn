@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://b8yagr1bijk2a"]
 
-[ext_resource type="PackedScene" uid="uid://t1nly78rl1lj" path="res://scenes/skunk.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://t1nly78rl1lj" path="res://scenes/GameScene/Characters/skunk.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://vsjpkti4dgm0" path="res://assets/Skyscraper_Buildings _pack_OldNinjaCat_v1.png" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://cgf7gio5g0o2u" path="res://scripts/camera_2d.gd" id="3_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://b1fcj6xq4shmj" path="res://scenes/snowFox.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://cad5iaalvxt0l" path="res://scenes/coralCrab.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://b1fcj6xq4shmj" path="res://scenes/GameScene/Characters/snowFox.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://cad5iaalvxt0l" path="res://scenes/GameScene/Characters/coralCrab.tscn" id="5_iywne"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")

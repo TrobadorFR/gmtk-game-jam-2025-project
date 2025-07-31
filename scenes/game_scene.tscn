@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://f6rxbf1r4663"]
+[gd_scene load_steps=5 format=3 uid="uid://f6rxbf1r4663"]
 
-[ext_resource type="PackedScene" uid="uid://b3tbx18hoxit5" path="res://scenes/world.tscn" id="1_w5aja"]
-[ext_resource type="PackedScene" uid="uid://dbk8y2jp2tlab" path="res://animals/character_manager.tscn" id="2_onqr8"]
+[ext_resource type="PackedScene" uid="uid://b3tbx18hoxit5" path="res://scenes/GameScene/world.tscn" id="1_w5aja"]
+[ext_resource type="PackedScene" uid="uid://dbk8y2jp2tlab" path="res://scenes/GameScene/character_manager.tscn" id="2_onqr8"]
+[ext_resource type="PackedScene" uid="uid://bq5e5yncbo64" path="res://scenes/GameScene/player_controls.tscn" id="3_bw6k5"]
+[ext_resource type="PackedScene" uid="uid://n3qnp557eye1" path="res://scenes/GameScene/cutscene_manager.tscn" id="4_y3j0m"]
 
 [node name="GameScene" type="Node"]
 
 [node name="World" parent="." instance=ExtResource("1_w5aja")]
 
 [node name="CharacterManager" parent="." instance=ExtResource("2_onqr8")]
+
+[node name="PlayerControls" parent="." instance=ExtResource("3_bw6k5")]
+
+[node name="CutsceneManager" parent="." instance=ExtResource("4_y3j0m")]
