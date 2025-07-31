@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://cad5iaalvxt0l"]
+
+[ext_resource type="Script" uid="uid://psjh8kd7udvt" path="res://scripts/player3.gd" id="1_22cpj"]
+[ext_resource type="Texture2D" uid="uid://ddoa35bv5sd0j" path="res://assets/Basic Asset Pack/Basic Animal Animations/Coral Crab/CoralCrab.png" id="1_hst2h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22cpj"]
+atlas = ExtResource("1_hst2h")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3xhv"]
+atlas = ExtResource("1_hst2h")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8bv2"]
+atlas = ExtResource("1_hst2h")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_es0ju"]
+atlas = ExtResource("1_hst2h")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ksua"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22cpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3xhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8bv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_es0ju")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5353"]
+size = Vector2(12, 7)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_22cpj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1ksua")
+autoplay = "default"
+frame_progress = 0.706945
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 4.5)
+shape = SubResource("RectangleShape2D_q5353")

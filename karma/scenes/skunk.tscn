@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://t1nly78rl1lj"]
+
+[ext_resource type="Texture2D" uid="uid://4aexi2dxqywt" path="res://assets/Basic Asset Pack/Basic Animal Animations/Stinky Skunk/StinkySkunk.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://dfm4u284w5vkl" path="res://scripts/player1.gd" id="1_g2els"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhqgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2els")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
+size = Vector2(15, 7)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_g2els")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qhqgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_dqkch")

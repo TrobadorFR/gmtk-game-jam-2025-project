@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://b1fcj6xq4shmj"]
+
+[ext_resource type="Texture2D" uid="uid://dsxmemws71jvu" path="res://assets/Basic Asset Pack/Basic Animal Animations/Snow Fox/SnowFox.png" id="1_jec5n"]
+[ext_resource type="Script" uid="uid://0wxdmbrjwned" path="res://scripts/player2.gd" id="1_rl13n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds2g6"]
+atlas = ExtResource("1_jec5n")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dttn2"]
+atlas = ExtResource("1_jec5n")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whdjv"]
+atlas = ExtResource("1_jec5n")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epgsg"]
+atlas = ExtResource("1_jec5n")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_slyto"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ds2g6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dttn2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whdjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epgsg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2jjx"]
+size = Vector2(12, 7)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_rl13n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_slyto")
+autoplay = "default"
+frame_progress = 0.549875
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_x2jjx")
