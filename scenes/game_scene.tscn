@@ -46,3 +46,6 @@ offset_right = 33.0
 offset_bottom = -19.0
 text = "3"
 metadata/_edit_use_anchors_ = true
+
+[node name="Character4" parent="CharacterManager" instance=ExtResource("3_ycayy")]
+position = Vector2(507, 464)
