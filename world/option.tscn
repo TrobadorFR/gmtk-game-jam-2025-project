@@ -1,11 +1,3 @@
-[gd_scene load_steps=2 format=3 uid="uid://odfgn5cl2mr3"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ablyh"]
-size = Vector2(4, 1)
+[gd_scene format=3 uid="uid://d4k7db2s40m5i"]
 
 [node name="Option" type="StaticBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-editor_description = "This can be anything really"
-position = Vector2(0, -1.5)
-shape = SubResource("RectangleShape2D_ablyh")
