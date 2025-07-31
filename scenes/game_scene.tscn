@@ -56,9 +56,13 @@ offset_bottom = -19.0
 text = "3"
 metadata/_edit_use_anchors_ = true
 
+[node name="Character4" parent="CharacterManager" instance=ExtResource("3_ycayy")]
+position = Vector2(507, 464)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
 position = Vector2(440, 188)
+process_callback = 0
 editor_draw_limits = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
@@ -77,6 +81,3 @@ tween_resource = SubResource("Resource_utbpp")
 follow_damping = true
 draw_limits = true
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
-
-[node name="Character4" parent="CharacterManager" instance=ExtResource("3_ycayy")]
-position = Vector2(507, 464)
