@@ -4,6 +4,10 @@ extends CharacterBody2D
 @export var SPEED = 300.0
 @export var JUMP_VELOCITY = -400.0
 
+## AI controller. Enabled by default on every character, should be on if no 
+## other controller is active. Managed by CharacterManager.
+@onready var ai_controller := $BaseAIController
+
 ## Commands received from controller
 class CommandPackage extends RefCounted: # RAAH THIS SUCKS
 	var jump : bool = false
