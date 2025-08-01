@@ -12,3 +12,4 @@ script = ExtResource("1_kqbmf")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(-127, 0)
+collide_with_areas = true
