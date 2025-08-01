@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://r1uly7p6hn5m"]
+
+[ext_resource type="PackedScene" uid="uid://b64tc37q3gcnw" path="res://animals/src/character.tscn" id="1_bj7cx"]
+[ext_resource type="Texture2D" uid="uid://b6rj5mfrncn24" path="res://assets/Basic Asset Pack/Basic Animal Animations/Honking Goose/HonkingGoose.png" id="2_0tjls"]
+[ext_resource type="Script" uid="uid://bewewx8q742xf" path="res://animals/bird.gd" id="2_63wqu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63wqu"]
+atlas = ExtResource("2_0tjls")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2uco"]
+atlas = ExtResource("2_0tjls")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wteep"]
+atlas = ExtResource("2_0tjls")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7hcv"]
+atlas = ExtResource("2_0tjls")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5shh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63wqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2uco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wteep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7hcv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bird" instance=ExtResource("1_bj7cx")]
+script = ExtResource("2_63wqu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
+position = Vector2(0, -25)
+scale = Vector2(3.125, 3.125)
+sprite_frames = SubResource("SpriteFrames_v5shh")
+frame_progress = 0.598428

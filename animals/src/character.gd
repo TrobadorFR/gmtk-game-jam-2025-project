@@ -39,11 +39,7 @@ func _physics_process(delta: float) -> void:
 func jump() -> void:
 	velocity.y = JUMP_VELOCITY
 
+## Returns whether the character is allowed to jump. Takes in account 
+## is_on_floor and coyote_time and can be overridden (Bird)
 func can_jump() -> bool:
 	return is_on_floor() or coyote_time
-
-#func get_multiplied_gravity() -> Vector2:
-	#if velocity.y < 0:
-		#return get_gravity() * RISING_GRAVITY_MULTIPLIER
-	#else:
-		#return get_gravity() * FALLING_GRAVITY_MULTIPLIER

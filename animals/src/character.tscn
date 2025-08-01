@@ -17,6 +17,7 @@ collision_mask = 2
 script = ExtResource("1_mh6dr")
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_mh6dr")
 debug_color = Color(0, 0.649872, 0.123991, 0.42)
 
@@ -32,6 +33,7 @@ offset_left = -20.0
 offset_top = -36.0
 offset_right = 20.0
 offset_bottom = -13.0
+text = "DebugState"
 
 [node name="Root" type="Node" parent="."]
 script = ExtResource("3_k8jga")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://f6rxbf1r4663"]
+[gd_scene load_steps=10 format=3 uid="uid://f6rxbf1r4663"]
 
 [ext_resource type="PackedScene" uid="uid://b3tbx18hoxit5" path="res://world/world.tscn" id="1_w5aja"]
 [ext_resource type="Script" uid="uid://dais5l217vgel" path="res://animals/src/character_manager.gd" id="3_bw6k5"]
 [ext_resource type="PackedScene" uid="uid://b64tc37q3gcnw" path="res://animals/src/character.tscn" id="3_ycayy"]
 [ext_resource type="PackedScene" uid="uid://dop7dnv405kgo" path="res://animals/src/player_controller.tscn" id="4_y3j0m"]
+[ext_resource type="PackedScene" uid="uid://r1uly7p6hn5m" path="res://animals/bird.tscn" id="5_b5spy"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_y3j0m"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="6_kk2rg"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_b5spy"]
@@ -60,6 +61,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Character4" parent="CharacterManager" instance=ExtResource("3_ycayy")]
 position = Vector2(507, 464)
+
+[node name="Bird" parent="CharacterManager" instance=ExtResource("5_b5spy")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
