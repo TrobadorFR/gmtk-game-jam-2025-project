@@ -8,9 +8,11 @@ func _on_enter(args):
 	
 	# Are we in coyote time?
 	# Check if we were grounded last frame
-	if state_root.was_state_active("Grounded"): 
+	print(get_previous_active_states())
+	if state_root.was_state_active("Grounded"):
+		print("starting coyote time")
 		target.coyote_time = true
-		coyote_timer.start(target.coyote_time_duration)
+		coyote_timer.start(target.COYOTE_TIME_DURATION)
 	
 
 func _on_coyote_time_timeout() -> void:

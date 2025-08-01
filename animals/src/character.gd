@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY = -400.0
 @export var RISING_GRAVITY = 980.0
 @export var FALLING_GRAVITY = 980.0
-@export var COYOTE_TIME_DURATION = 2.0
+@export var COYOTE_TIME_DURATION = 0.2
 
 ## AI controller. Enabled by default on every character, should be on if no 
 ## other controller is active. Managed by CharacterManager.
@@ -32,11 +32,12 @@ func _ready() -> void:
 	$Root.change_state("Active")
 
 func _physics_process(delta: float) -> void:
+	#debug
+	$CollisionBox.debug_color = Color("red") if coyote_time else Color("green")
 	pass
 
 func jump() -> void:
 	velocity.y = JUMP_VELOCITY
-	
 
 func can_jump() -> bool:
 	return is_on_floor() or coyote_time

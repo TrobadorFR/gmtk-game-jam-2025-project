@@ -35,7 +35,7 @@ offset_bottom = -13.0
 
 [node name="Root" type="Node" parent="."]
 script = ExtResource("3_k8jga")
-history_size = 0
+history_size = 5
 disabled = false
 debug_mode = true
 target_path = NodePath("")
@@ -106,8 +106,8 @@ timed = false
 next_state = NodePath("")
 metadata/_custom_type_script = "uid://btqojlh0sgxvh"
 
-[node name="Rising" type="Node" parent="Root/Active/Actionable/Airborne"]
-script = ExtResource("7_5fsew")
+[node name="Falling" type="Node" parent="Root/Active/Actionable/Airborne"]
+script = ExtResource("7_tf2l3")
 disabled = false
 debug_mode = false
 target_path = NodePath("")
@@ -115,8 +115,8 @@ timed = false
 next_state = NodePath("")
 metadata/_custom_type_script = "uid://btqojlh0sgxvh"
 
-[node name="Falling" type="Node" parent="Root/Active/Actionable/Airborne"]
-script = ExtResource("7_tf2l3")
+[node name="Rising" type="Node" parent="Root/Active/Actionable/Airborne"]
+script = ExtResource("7_5fsew")
 disabled = false
 debug_mode = false
 target_path = NodePath("")
