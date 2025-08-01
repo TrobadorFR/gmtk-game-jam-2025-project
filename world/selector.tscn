@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu1bxpq74etaf"]
+
+[ext_resource type="Script" uid="uid://bs88dscpl5316" path="res://world/selector.gd" id="1_kqbmf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rtd5o"]
+radius = 50.0
+height = 164.0
+
+[node name="Selector" type="CollisionShape2D"]
+shape = SubResource("CapsuleShape2D_rtd5o")
+script = ExtResource("1_kqbmf")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-127, 0)

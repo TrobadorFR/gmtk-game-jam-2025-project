@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b64tc37q3gcnw"]
+[gd_scene load_steps=4 format=3 uid="uid://drivcaf2se6a4"]
 
-[ext_resource type="Script" uid="uid://xq6maw2qhs0d" path="res://animals/character.gd" id="1_mh6dr"]
-[ext_resource type="Script" uid="uid://depx5bfveeqe7" path="res://animals/base_ai_controller.gd" id="2_na5lv"]
+[ext_resource type="Script" path="res://animals/character.gd" id="1_mh6dr"]
+[ext_resource type="Script" path="res://animals/base_ai_controller.gd" id="2_na5lv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mh6dr"]
 

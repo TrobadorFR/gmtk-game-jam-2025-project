@@ -6,7 +6,7 @@ extends Node2D
 @onready var characters := get_children()
 var player_controller : PlayerController
 var starting_character : Character
-@onready var camera := $"../PhantomCamera2D"
+@onready var camera: PhantomCamera2D = %PhantomCamera2D
 
 func _ready(): 
 	SignalBus.connect("switch_player_character", switch_player_character)

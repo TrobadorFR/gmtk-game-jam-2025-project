@@ -1,3 +1,26 @@
-[gd_scene format=3 uid="uid://buuoh408aphno"]
+[gd_scene load_steps=4 format=3 uid="uid://bq0fywnlyt458"]
+
+[ext_resource type="Script" uid="uid://cwhe7w6k4w8kr" path="res://world/main_menu.gd" id="1_ctg6d"]
+[ext_resource type="PackedScene" uid="uid://d4k7db2s40m5i" path="res://world/option.tscn" id="1_dwuny"]
+[ext_resource type="PackedScene" uid="uid://bu1bxpq74etaf" path="res://world/selector.tscn" id="2_p6djx"]
 
 [node name="Main Menu" type="Node2D"]
+script = ExtResource("1_ctg6d")
+
+[node name="Option" parent="." instance=ExtResource("1_dwuny")]
+position = Vector2(598, 318)
+
+[node name="Label" type="Label" parent="Option"]
+offset_left = -21.0
+offset_right = 19.0
+offset_bottom = 23.0
+text = "Play"
+
+[node name="Option2" parent="." instance=ExtResource("1_dwuny")]
+position = Vector2(598, 450)
+
+[node name="Option3" parent="." instance=ExtResource("1_dwuny")]
+position = Vector2(604, 577)
+
+[node name="Selector" parent="." instance=ExtResource("2_p6djx")]
+position = Vector2(813, 318)
