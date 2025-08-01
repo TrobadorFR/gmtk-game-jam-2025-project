@@ -10,28 +10,28 @@ var starting_character : Character
 
 func _ready(): 
 	SignalBus.connect("switch_player_character", switch_player_character)
+	SignalBus.connect("dbg_cycle_characters", dbg_switch_char)
 	
 	# setting initial character. for testing.
 	#print(characters[0])
 	#starting_character.add_child(player_controller)
 	player_controller = $Character/PlayerController
 	starting_character = $Character
+	
 	player_controller.current_character = starting_character
 	player_controller.enabled = true
-	starting_character.ai_controller.enabled = false
 	
-	print(characters)
+	starting_character.ai_controller.enabled = false
 
 var dbg_char := 0
-func switch_player_character(character: Character):
+func dbg_switch_char():
+	SignalBus.emit_signal("switch_player_character", characters[dbg_char])
+	dbg_char = 0 if (dbg_char + 1) >= characters.size() else dbg_char + 1
+
+func switch_player_character(new_char: Character):
 	# keep old char, gotta do things to it
 	var old_char = player_controller.current_character
-	# since we don't have any mechanics implemented for switching atm, we just
-	# cycle between the existing characters. 
-	var new_char : Character = characters[dbg_char]
-	
-	print("Reparenting player controller from %s to %s" % [old_char.name, new_char.name])
-	dbg_char = 0 if (dbg_char + 1) >= characters.size() else dbg_char + 1
+	print("CharacterManager: Reattaching PlayerController from %s to %s" % [old_char.name, new_char.name])
 	
 	# disable ai on new char
 	new_char.ai_controller.enabled = false
@@ -43,6 +43,7 @@ func switch_player_character(character: Character):
 	# we can shoot a signal here if we want player_controller to do things
 	# once it receives its new character.
 	
+	# Follow new character
 	camera.follow_target = new_char
 	
 	# reactivate ai on old char

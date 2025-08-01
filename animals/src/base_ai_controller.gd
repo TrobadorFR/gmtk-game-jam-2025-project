@@ -12,12 +12,13 @@ func _ready():
 	enabled = true
 
 func _physics_process(delta: float) -> void:
-	timer += delta 
-	if timer >= timer_max:
-		timer = 0
-		direction = -direction
-		#timer_max = randf_range(2.0, 6.0)
-	
-	var commands : CommandPackage = CommandPackage.new()
-	commands.movement = direction
-	current_character.commands = commands
+	if enabled:
+		timer += delta 
+		if timer >= timer_max:
+			timer = 0
+			direction = -direction
+			#timer_max = randf_range(2.0, 6.0)
+		
+		var commands : CommandPackage = CommandPackage.new()
+		commands.movement = direction
+		current_character.commands = commands

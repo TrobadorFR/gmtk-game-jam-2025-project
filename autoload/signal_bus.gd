@@ -4,3 +4,7 @@ extends Node
 
 signal change_scene(scene_name: String)
 signal switch_player_character(character: Character) # later, include character id
+
+#region Debug
+signal dbg_cycle_characters
+#endregion

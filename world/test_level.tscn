@@ -11,6 +11,15 @@ radius = 103.078
 
 [node name="TestLevel" type="Node2D"]
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(74, 665)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+position = Vector2(258, -144)
+polygon = PackedVector2Array(-1400, 541, -1046, 549, -1020, 336, -883, 275, -800, 268, -762, 450, -773, 556, -481, 579, -279, 572, -333, 389, -120, 427, -101, 598, 74, 556, 112, 359, 104, 154, 378, 203, 302, 503, 530, 484, 526, 340, 640, 321, 681, 480, 928, 496, 1118, 587, 1122, 659, 1270, 670, 1293, 530, 1551, 545, 1779, 541, 1771, 818, -1369, 803)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
 collision_mask = 0

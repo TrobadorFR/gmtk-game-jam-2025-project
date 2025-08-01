@@ -1,0 +1,145 @@
+[gd_scene load_steps=11 format=3 uid="uid://b64tc37q3gcnw"]
+
+[ext_resource type="Script" uid="uid://xq6maw2qhs0d" path="res://animals/src/character.gd" id="1_mh6dr"]
+[ext_resource type="Script" uid="uid://depx5bfveeqe7" path="res://animals/src/base_ai_controller.gd" id="2_na5lv"]
+[ext_resource type="Script" uid="uid://btqojlh0sgxvh" path="res://addons/xsm/state.gd" id="3_8rvar"]
+[ext_resource type="Script" uid="uid://mbamp1n27i6" path="res://animals/src/root.gd" id="3_k8jga"]
+[ext_resource type="Script" uid="uid://b5qyho11052ne" path="res://animals/src/actionable.gd" id="4_qph6h"]
+[ext_resource type="Script" uid="uid://dvb38u333k7lj" path="res://animals/src/grounded.gd" id="5_fpodf"]
+[ext_resource type="Script" uid="uid://dt083n40aoue1" path="res://animals/src/airborne.gd" id="6_1lpl5"]
+[ext_resource type="Script" uid="uid://bve88tco3qfs1" path="res://animals/src/rising.gd" id="7_5fsew"]
+[ext_resource type="Script" uid="uid://d1y3ejg5tgj1f" path="res://animals/src/falling.gd" id="7_tf2l3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mh6dr"]
+
+[node name="Character" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_mh6dr")
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mh6dr")
+debug_color = Color(0, 0.649872, 0.123991, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="BaseAIController" type="Node2D" parent="."]
+script = ExtResource("2_na5lv")
+
+[node name="CoyoteTime" type="Timer" parent="."]
+
+[node name="DebugState" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -36.0
+offset_right = 20.0
+offset_bottom = -13.0
+
+[node name="Root" type="Node" parent="."]
+script = ExtResource("3_k8jga")
+history_size = 0
+disabled = false
+debug_mode = true
+target_path = NodePath("")
+timed = false
+next_state = NodePath("")
+metadata/_custom_type_script = "uid://btqojlh0sgxvh"
+
+[node name="PreInit" type="Node" parent="Root"]
+script = ExtResource("3_8rvar")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath(".")
+metadata/_custom_type_script = "uid://btqojlh0sgxvh"
+
+[node name="Active" type="Node" parent="Root"]
+script = ExtResource("3_8rvar")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("../PreInit")
+metadata/_custom_type_script = "uid://btqojlh0sgxvh"
+
+[node name="Actionable" type="Node" parent="Root/Active"]
+script = ExtResource("4_qph6h")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("")
+metadata/_custom_type_script = "uid://btqojlh0sgxvh"
+
+[node name="Grounded" type="Node" parent="Root/Active/Actionable"]
+script = ExtResource("5_fpodf")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("")
+metadata/_custom_type_script = "uid://btqojlh0sgxvh"
+
+[node name="Idle" type="Node" parent="Root/Active/Actionable/Grounded"]
+script = ExtResource("3_8rvar")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("")
+metadata/_custom_type_script = "uid://btqojlh0sgxvh"
+
+[node name="Walking" type="Node" parent="Root/Active/Actionable/Grounded"]
+script = ExtResource("3_8rvar")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("")
+metadata/_custom_type_script = "uid://btqojlh0sgxvh"
+
+[node name="Airborne" type="Node" parent="Root/Active/Actionable"]
+script = ExtResource("6_1lpl5")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("")
+metadata/_custom_type_script = "uid://btqojlh0sgxvh"
+
+[node name="Rising" type="Node" parent="Root/Active/Actionable/Airborne"]
+script = ExtResource("7_5fsew")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("")
+metadata/_custom_type_script = "uid://btqojlh0sgxvh"
+
+[node name="Falling" type="Node" parent="Root/Active/Actionable/Airborne"]
+script = ExtResource("7_tf2l3")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("")
+metadata/_custom_type_script = "uid://btqojlh0sgxvh"
+
+[node name="Acting" type="Node" parent="Root/Active"]
+script = ExtResource("3_8rvar")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("")
+metadata/_custom_type_script = "uid://btqojlh0sgxvh"
+
+[node name="Grabbed" type="Node" parent="Root/Active/Acting"]
+script = ExtResource("3_8rvar")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("")
+metadata/_custom_type_script = "uid://btqojlh0sgxvh"
+
+[connection signal="timeout" from="CoyoteTime" to="Root/Active/Actionable/Airborne/Falling" method="_on_coyote_time_timeout"]
