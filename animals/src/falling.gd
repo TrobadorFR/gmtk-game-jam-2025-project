@@ -27,12 +27,8 @@ func _on_update(delta):
 	# and I don't wanna spend too much time on it
 	if target.commands.fastfall:
 		target.gravity = target.FALLING_GRAVITY * target.FASTFALL_GRAVITY_MODIFIER
-		print("SETTING SPEED TO %s" % str(target.FALLING_GRAVITY * target.FASTFALL_GRAVITY_MODIFIER))
-		print(target.gravity)
 	else:
-		print("SETTING SPEED TO %s" % target.FALLING_GRAVITY)
 		target.gravity = target.FALLING_GRAVITY
-		print(target.gravity)
 
 func _on_exit(args):
 	coyote_timer.stop()

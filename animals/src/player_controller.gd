@@ -30,7 +30,6 @@ func _physics_process(_delta: float) -> void:
 		commands.jump = true if jump_buffer else false
 		commands.interact = true if interact_buffer else false
 		
-		print(commands.fastfall)
 		current_character.commands = commands
 		
 		jump_buffer = max(0, jump_buffer - 1)
