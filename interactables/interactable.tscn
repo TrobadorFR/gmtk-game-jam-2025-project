@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://fhws012rk24t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtoeu"]
+
+[node name="Interactable" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_vtoeu")
+debug_color = Color(1, 0.883333, 0, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
