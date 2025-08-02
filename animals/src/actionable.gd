@@ -18,6 +18,9 @@ func _on_update(delta):
 		# Handle jump.
 		if target.commands.jump and target.can_jump():
 			target.jump()
+		
+		# Handle passing through platforms.
+		target.set_collision_mask_value(4, !target.commands.fastfall)
 
 		# Get the input direction and handle the movement/deceleration.
 		var direction = target.commands.movement

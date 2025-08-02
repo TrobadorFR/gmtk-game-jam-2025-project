@@ -1,4 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6sylqveyne31"]
+[gd_scene load_steps=5 format=3 uid="uid://c6sylqveyne31"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abcqb"]
+size = Vector2(75, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ku4rg"]
 size = Vector2(760, 55)
@@ -10,6 +13,36 @@ size = Vector2(242, 138)
 radius = 103.078
 
 [node name="TestLevel" type="Node2D"]
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(919, 374)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource("RectangleShape2D_abcqb")
+one_way_collision = true
+debug_color = Color(0.744706, 0.323523, 0.834932, 0.42)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(920, 310)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource("RectangleShape2D_abcqb")
+one_way_collision = true
+debug_color = Color(0.744706, 0.323523, 0.834932, 0.42)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(920, 251)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+shape = SubResource("RectangleShape2D_abcqb")
+one_way_collision = true
+debug_color = Color(0.744706, 0.323523, 0.834932, 0.42)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(74, 665)

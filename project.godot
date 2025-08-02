@@ -79,6 +79,7 @@ gp_action={
 2d_physics/layer_1="Character"
 2d_physics/layer_2="Level"
 2d_physics/layer_3="Interactable"
+2d_physics/layer_4="Passthrough"
 
 [physics]
 

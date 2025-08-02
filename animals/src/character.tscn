@@ -24,7 +24,7 @@ colors = PackedColorArray(1, 1, 1, 0.584314, 1, 1, 1, 0)
 colors = PackedColorArray(1, 1, 1, 0.607843, 1, 1, 1, 0)
 
 [node name="Character" type="CharacterBody2D"]
-collision_mask = 2
+collision_mask = 10
 script = ExtResource("1_mh6dr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -139,10 +139,20 @@ metadata/_custom_type_script = "uid://btqojlh0sgxvh"
 
 [node name="Idle" type="Node" parent="Root/Active/Actionable/Grounded"]
 script = ExtResource("8_ccnsd")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("")
 metadata/_custom_type_script = "uid://btqojlh0sgxvh"
 
 [node name="Walking" type="Node" parent="Root/Active/Actionable/Grounded"]
 script = ExtResource("9_6ptc7")
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("")
 metadata/_custom_type_script = "uid://btqojlh0sgxvh"
 
 [node name="Airborne" type="Node" parent="Root/Active/Actionable"]
