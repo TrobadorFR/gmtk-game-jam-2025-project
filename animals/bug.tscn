@@ -36,15 +36,3 @@ target_position = Vector2(38, 0)
 [node name="CliffPityTopRay" parent="." index="4"]
 position = Vector2(0, -7)
 target_position = Vector2(38, 0)
-
-[node name="Actionable" parent="Root/Active" index="0"]
-next_state = NodePath("../Acting")
-
-[node name="Grounded" parent="Root/Active/Actionable" index="0"]
-next_state = NodePath("../Airborne")
-
-[node name="Idle" parent="Root/Active/Actionable/Grounded" index="0"]
-next_state = NodePath("../Walking")
-
-[node name="Falling" parent="Root/Active/Actionable/Airborne" index="0"]
-next_state = NodePath("../Rising")

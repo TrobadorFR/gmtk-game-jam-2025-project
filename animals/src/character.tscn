@@ -1,16 +1,27 @@
-[gd_scene load_steps=11 format=3 uid="uid://b64tc37q3gcnw"]
+[gd_scene load_steps=17 format=3 uid="uid://b64tc37q3gcnw"]
 
 [ext_resource type="Script" uid="uid://xq6maw2qhs0d" path="res://animals/src/character.gd" id="1_mh6dr"]
 [ext_resource type="Script" uid="uid://depx5bfveeqe7" path="res://animals/src/base_ai_controller.gd" id="2_na5lv"]
+[ext_resource type="Texture2D" uid="uid://yif6hg23td7i" path="res://assets/jump-cloud.png" id="3_3eklg"]
 [ext_resource type="Script" uid="uid://btqojlh0sgxvh" path="res://addons/xsm/state.gd" id="3_8rvar"]
 [ext_resource type="Script" uid="uid://mbamp1n27i6" path="res://animals/src/root.gd" id="3_k8jga"]
+[ext_resource type="Texture2D" uid="uid://dx05lc3r85t5r" path="res://assets/run-cloud.png" id="4_n1kpo"]
 [ext_resource type="Script" uid="uid://b5qyho11052ne" path="res://animals/src/actionable.gd" id="4_qph6h"]
 [ext_resource type="Script" uid="uid://dvb38u333k7lj" path="res://animals/src/grounded.gd" id="5_fpodf"]
 [ext_resource type="Script" uid="uid://dt083n40aoue1" path="res://animals/src/airborne.gd" id="6_1lpl5"]
 [ext_resource type="Script" uid="uid://bve88tco3qfs1" path="res://animals/src/rising.gd" id="7_5fsew"]
 [ext_resource type="Script" uid="uid://d1y3ejg5tgj1f" path="res://animals/src/falling.gd" id="7_tf2l3"]
+[ext_resource type="Script" uid="uid://bmqoaw0gnpbvb" path="res://animals/src/idle.gd" id="8_ccnsd"]
+[ext_resource type="Script" uid="uid://3iyd47r8yh05" path="res://animals/src/walking.gd" id="9_6ptc7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mh6dr"]
+
+[sub_resource type="Gradient" id="Gradient_3eklg"]
+offsets = PackedFloat32Array(0.169014, 1)
+colors = PackedColorArray(1, 1, 1, 0.584314, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_n1kpo"]
+colors = PackedColorArray(1, 1, 1, 0.607843, 1, 1, 1, 0)
 
 [node name="Character" type="CharacterBody2D"]
 collision_mask = 2
@@ -37,7 +48,40 @@ collision_mask = 2
 
 [node name="CoyoteTime" type="Timer" parent="."]
 
+[node name="JumpParticle" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 1
+texture = ExtResource("3_3eklg")
+lifetime = 0.3
+one_shot = true
+direction = Vector2(0, 1)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+damping_min = 50.0
+damping_max = 50.0
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+color_ramp = SubResource("Gradient_3eklg")
+
+[node name="WalkParticle" type="CPUParticles2D" parent="."]
+amount = 1
+texture = ExtResource("4_n1kpo")
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 20)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+angle_max = 360.0
+scale_amount_min = 0.15
+scale_amount_max = 0.25
+color_ramp = SubResource("Gradient_n1kpo")
+
 [node name="DebugLayer" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="DebugState" type="Label" parent="DebugLayer"]
 offset_left = -20.0
@@ -93,21 +137,11 @@ next_state = NodePath("")
 metadata/_custom_type_script = "uid://btqojlh0sgxvh"
 
 [node name="Idle" type="Node" parent="Root/Active/Actionable/Grounded"]
-script = ExtResource("3_8rvar")
-disabled = false
-debug_mode = false
-target_path = NodePath("")
-timed = false
-next_state = NodePath("")
+script = ExtResource("8_ccnsd")
 metadata/_custom_type_script = "uid://btqojlh0sgxvh"
 
 [node name="Walking" type="Node" parent="Root/Active/Actionable/Grounded"]
-script = ExtResource("3_8rvar")
-disabled = false
-debug_mode = false
-target_path = NodePath("")
-timed = false
-next_state = NodePath("")
+script = ExtResource("9_6ptc7")
 metadata/_custom_type_script = "uid://btqojlh0sgxvh"
 
 [node name="Airborne" type="Node" parent="Root/Active/Actionable"]

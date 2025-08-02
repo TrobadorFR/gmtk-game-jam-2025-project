@@ -38,12 +38,13 @@ func _ready() -> void:
 	# Active when ready.
 	$Root.change_state("Active")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	#debug
 	#$CollisionBox.debug_color = Color("red") if coyote_time else Color("green")
 	pass
 
 func jump() -> void:
+	$JumpParticle.emitting = true
 	velocity.y = JUMP_VELOCITY
 
 ## Returns whether the character is allowed to jump. Takes in account 
