@@ -26,9 +26,11 @@ func _physics_process(_delta: float) -> void:
 		var commands : CommandPackage = CommandPackage.new()
 		
 		commands.movement = Input.get_axis("gp_left", "gp_right")
+		commands.fastfall = Input.is_action_pressed("gp_down")
 		commands.jump = true if jump_buffer else false
 		commands.interact = true if interact_buffer else false
 		
+		print(commands.fastfall)
 		current_character.commands = commands
 		
 		jump_buffer = max(0, jump_buffer - 1)

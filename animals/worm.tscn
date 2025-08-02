@@ -31,3 +31,17 @@ offset = Vector2(26.5423, -149.607)
 [node name="CollisionBox" parent="." index="1"]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_u7thb")
+
+[node name="Idle" parent="Root/Active/Actionable/Grounded" index="0"]
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("")
+
+[node name="Walking" parent="Root/Active/Actionable/Grounded" index="1"]
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("")

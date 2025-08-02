@@ -40,3 +40,26 @@ target_position = Vector2(48, 0)
 [node name="CliffPityTopRay" parent="." index="4"]
 position = Vector2(0, -5)
 target_position = Vector2(48, 0)
+
+[node name="Actionable" parent="Root/Active" index="0"]
+next_state = NodePath("../Acting")
+
+[node name="Grounded" parent="Root/Active/Actionable" index="0"]
+next_state = NodePath("../Airborne")
+
+[node name="Idle" parent="Root/Active/Actionable/Grounded" index="0"]
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("../Walking")
+
+[node name="Walking" parent="Root/Active/Actionable/Grounded" index="1"]
+disabled = false
+debug_mode = false
+target_path = NodePath("")
+timed = false
+next_state = NodePath("")
+
+[node name="Falling" parent="Root/Active/Actionable/Airborne" index="0"]
+next_state = NodePath("../Rising")

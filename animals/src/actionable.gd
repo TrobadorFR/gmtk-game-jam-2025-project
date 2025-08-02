@@ -32,6 +32,8 @@ func _on_update(delta):
 					target.global_position.y += target.cliff_pity_top_ray.position.y - target.cliff_pity_bottom_ray.position.y
 		else:
 			target.velocity.x = move_toward(target.velocity.x, 0, target.speed)
-			
-		target.move_and_slide()
-		target.commands = null
+
+
+func _after_update(_delta):
+	target.move_and_slide()
+	target.commands = null

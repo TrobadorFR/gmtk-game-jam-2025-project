@@ -21,6 +21,18 @@ func _on_coyote_time_timeout() -> void:
 func _on_update(delta):
 	if target.velocity.y < 0:
 		change_state("Rising")
+	
+	# Fastfall
+	# This is very ugly and sets the gravity every frame but it's probably fine
+	# and I don't wanna spend too much time on it
+	if target.commands.fastfall:
+		target.gravity = target.FALLING_GRAVITY * target.FASTFALL_GRAVITY_MODIFIER
+		print("SETTING SPEED TO %s" % str(target.FALLING_GRAVITY * target.FASTFALL_GRAVITY_MODIFIER))
+		print(target.gravity)
+	else:
+		print("SETTING SPEED TO %s" % target.FALLING_GRAVITY)
+		target.gravity = target.FALLING_GRAVITY
+		print(target.gravity)
 
 func _on_exit(args):
 	coyote_timer.stop()

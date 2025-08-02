@@ -5,4 +5,5 @@ extends RefCounted
 
 var jump : bool = false
 var interact : bool = false
+var fastfall: bool = false
 var movement : float = 0.0 # from getaxis
