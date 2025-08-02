@@ -1,5 +1,6 @@
 class_name Character
-extends CharacterBody2D
+extends CharacterBody2D 
+## Character in the game. Takes Commands from an attached Controller.
 
 @export var GROUND_SPEED = 300.0
 @export var AIR_SPEED = 300.0

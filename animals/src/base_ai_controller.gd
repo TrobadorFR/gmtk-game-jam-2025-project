@@ -1,6 +1,8 @@
 class_name BaseAIController
 extends Controller
-# Base controller 
+## Default controller for any Character node. Whenever a Character is not being
+## controlled by another Controller such as PlayerController, the 
+## BaseAIController should be active. Otherwise, it should be disabled.
 
 var timer : float = 0.0
 var timer_max : float = 1.0
@@ -12,6 +14,7 @@ func _ready():
 	enabled = true
 
 func _physics_process(delta: float) -> void:
+	# Simple idle routine. 
 	if enabled:
 		timer += delta 
 		if timer >= timer_max:

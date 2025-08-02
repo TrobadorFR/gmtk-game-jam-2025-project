@@ -1,5 +1,6 @@
 class_name Controller
 extends Node2D
+## A Controller provides commands to one Character through CommandPackage.
 
 var current_character : Character
 var enabled : bool = false

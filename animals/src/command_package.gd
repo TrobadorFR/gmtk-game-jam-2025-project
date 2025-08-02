@@ -1,7 +1,7 @@
 class_name CommandPackage 
 extends RefCounted
 ## This compiles all commands to be issued to the controlled character, each
-## frame.
+## frame. Constructed by Controllers.
 
 var jump : bool = false
 var interact : bool = false
