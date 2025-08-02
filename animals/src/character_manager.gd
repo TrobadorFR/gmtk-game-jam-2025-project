@@ -15,8 +15,8 @@ func _ready():
 	# setting initial character. for testing.
 	#print(characters[0])
 	#starting_character.add_child(player_controller)
-	player_controller = $Character/PlayerController
-	starting_character = $Character
+	player_controller = $Bird/PlayerController
+	starting_character = $Bird
 	
 	player_controller.current_character = starting_character
 	player_controller.enabled = true

@@ -34,7 +34,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	#debug
-	$CollisionBox.debug_color = Color("red") if coyote_time else Color("green")
+	#$CollisionBox.debug_color = Color("red") if coyote_time else Color("green")
 	pass
 
 func jump() -> void:

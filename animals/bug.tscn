@@ -1,17 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://cw87x21kxtjgo"]
+[gd_scene load_steps=5 format=3 uid="uid://cw87x21kxtjgo"]
 
 [ext_resource type="PackedScene" uid="uid://b64tc37q3gcnw" path="res://animals/src/character.tscn" id="1_jmqbw"]
+[ext_resource type="Texture2D" uid="uid://j12bugae76fc" path="res://assets/beetle-concept.png" id="2_xwaro"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h7adp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xwaro")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3y5ta"]
+size = Vector2(53, 33.5)
 
 [node name="Bug" instance=ExtResource("1_jmqbw")]
+GROUND_SPEED = 450.0
 
-[node name="Actionable" parent="Root/Active" index="0"]
-next_state = NodePath("../Acting")
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(-14, -28)
+scale = Vector2(0.158281, 0.158281)
+sprite_frames = SubResource("SpriteFrames_h7adp")
 
-[node name="Grounded" parent="Root/Active/Actionable" index="0"]
-next_state = NodePath("../Airborne")
-
-[node name="Idle" parent="Root/Active/Actionable/Grounded" index="0"]
-next_state = NodePath("../Walking")
-
-[node name="Falling" parent="Root/Active/Actionable/Airborne" index="0"]
-next_state = NodePath("../Rising")
+[node name="CollisionBox" parent="." index="1"]
+position = Vector2(-0.5, -17.25)
+shape = SubResource("RectangleShape2D_3y5ta")

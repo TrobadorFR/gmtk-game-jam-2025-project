@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://f6rxbf1r4663"]
+[gd_scene load_steps=11 format=3 uid="uid://f6rxbf1r4663"]
 
 [ext_resource type="PackedScene" uid="uid://b3tbx18hoxit5" path="res://world/world.tscn" id="1_w5aja"]
 [ext_resource type="Script" uid="uid://dais5l217vgel" path="res://animals/src/character_manager.gd" id="3_bw6k5"]
-[ext_resource type="PackedScene" uid="uid://b64tc37q3gcnw" path="res://animals/src/character.tscn" id="3_ycayy"]
+[ext_resource type="PackedScene" uid="uid://cw87x21kxtjgo" path="res://animals/bug.tscn" id="4_b5spy"]
 [ext_resource type="PackedScene" uid="uid://dop7dnv405kgo" path="res://animals/src/player_controller.tscn" id="4_y3j0m"]
 [ext_resource type="PackedScene" uid="uid://r1uly7p6hn5m" path="res://animals/bird.tscn" id="5_b5spy"]
+[ext_resource type="PackedScene" uid="uid://caikesvlowoa1" path="res://animals/worm.tscn" id="5_utbpp"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_y3j0m"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="6_kk2rg"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_b5spy"]
@@ -22,51 +23,39 @@ ease = 2
 [node name="CharacterManager" type="Node2D" parent="."]
 script = ExtResource("3_bw6k5")
 
-[node name="Character" parent="CharacterManager" instance=ExtResource("3_ycayy")]
-position = Vector2(440, 188)
-AIR_SPEED = 150.0
-FALLING_GRAVITY = 480.0
-
-[node name="Label2" type="Label" parent="CharacterManager/Character"]
-offset_left = -8.0
-offset_top = -44.0
-offset_right = 32.0
-offset_bottom = -21.0
-text = "1"
-metadata/_edit_use_anchors_ = true
-
-[node name="PlayerController" parent="CharacterManager/Character" instance=ExtResource("4_y3j0m")]
-
-[node name="Character2" parent="CharacterManager" instance=ExtResource("3_ycayy")]
-position = Vector2(725, 225)
-
-[node name="Label2" type="Label" parent="CharacterManager/Character2"]
-offset_left = -7.0
-offset_top = -44.0
-offset_right = 99.0
-offset_bottom = -21.0
-text = "2"
-metadata/_edit_use_anchors_ = true
-
-[node name="Character3" parent="CharacterManager" instance=ExtResource("3_ycayy")]
-position = Vector2(247, 270)
-
-[node name="Label2" type="Label" parent="CharacterManager/Character3"]
-offset_left = -7.0
-offset_top = -42.0
-offset_right = 33.0
-offset_bottom = -19.0
-text = "3"
-metadata/_edit_use_anchors_ = true
-
-[node name="Character4" parent="CharacterManager" instance=ExtResource("3_ycayy")]
-position = Vector2(507, 464)
-
 [node name="Bird" parent="CharacterManager" instance=ExtResource("5_b5spy")]
+position = Vector2(485, 370)
+
+[node name="Label" type="Label" parent="CharacterManager/Bird"]
+offset_left = -21.0
+offset_top = -66.0
+offset_right = 19.0
+offset_bottom = -43.0
+text = "Bird"
+
+[node name="PlayerController" parent="CharacterManager/Bird" instance=ExtResource("4_y3j0m")]
+
+[node name="Bug" parent="CharacterManager" instance=ExtResource("4_b5spy")]
+position = Vector2(286, 261)
+
+[node name="Label" type="Label" parent="CharacterManager/Bug"]
+offset_left = -16.0
+offset_top = -63.0
+offset_right = 24.0
+offset_bottom = -40.0
+text = "Bug"
+
+[node name="Worm" parent="CharacterManager" instance=ExtResource("5_utbpp")]
+position = Vector2(713, 425)
+
+[node name="Label" type="Label" parent="CharacterManager/Worm"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Worm"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
-position = Vector2(440, 188)
+position = Vector2(485, 370)
 process_callback = 0
 editor_draw_limits = true
 
@@ -78,10 +67,10 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(440, 188)
+position = Vector2(485, 370)
 script = ExtResource("6_kk2rg")
 follow_mode = 2
-follow_target = NodePath("../CharacterManager/Character")
+follow_target = NodePath("../CharacterManager/Bird")
 tween_resource = SubResource("Resource_utbpp")
 follow_damping = true
 draw_limits = true
