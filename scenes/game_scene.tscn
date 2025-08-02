@@ -73,5 +73,6 @@ follow_mode = 2
 follow_target = NodePath("../CharacterManager/Bird")
 tween_resource = SubResource("Resource_utbpp")
 follow_damping = true
+follow_damping_value = Vector2(0.3, 0.3)
 draw_limits = true
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
