@@ -24,10 +24,10 @@ AIR_SPEED = 75.0
 FALLING_GRAVITY = 480.0
 
 [node name="AnimatedSprite2D" parent="." index="0"]
-position = Vector2(-1, -17)
-scale = Vector2(0.113699, 0.113699)
+scale = Vector2(0.114, 0.114)
 sprite_frames = SubResource("SpriteFrames_pq0ow")
+offset = Vector2(26.5423, -149.607)
 
 [node name="CollisionBox" parent="." index="1"]
-position = Vector2(1.5, -8.5)
+position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_u7thb")

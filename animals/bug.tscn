@@ -15,16 +15,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3y5ta"]
-size = Vector2(53, 33.5)
+size = Vector2(53, 32.75)
 
 [node name="Bug" instance=ExtResource("1_jmqbw")]
 GROUND_SPEED = 450.0
 
 [node name="AnimatedSprite2D" parent="." index="0"]
-position = Vector2(-14, -28)
-scale = Vector2(0.158281, 0.158281)
+scale = Vector2(0.158, 0.158)
 sprite_frames = SubResource("SpriteFrames_h7adp")
+offset = Vector2(87.3583, -166.387)
 
 [node name="CollisionBox" parent="." index="1"]
-position = Vector2(-0.5, -17.25)
+position = Vector2(0, -16.375)
 shape = SubResource("RectangleShape2D_3y5ta")

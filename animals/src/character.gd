@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var RISING_GRAVITY = 980.0
 @export var FALLING_GRAVITY = 980.0
 @export var COYOTE_TIME_DURATION = 0.2
+#@export var CLIFF_PITY_LENIENCY = 10.0
 
 ## AI controller. Enabled by default on every character, should be on if no 
 ## other controller is active. Managed by CharacterManager.
@@ -44,3 +45,12 @@ func jump() -> void:
 ## is_on_floor and coyote_time and can be overridden (Bird)
 func can_jump() -> bool:
 	return is_on_floor() or coyote_time
+
+## Flips character based on dir's sign. Must be a number.
+func flip(dir) -> void: # do not typehint
+	for node_to_flip in [
+		$AnimatedSprite2D,
+		$CliffPityBottomRay,
+		$CliffPityTopRay
+	]:
+		node_to_flip.scale.x = abs(node_to_flip.scale.x) * sign(dir)

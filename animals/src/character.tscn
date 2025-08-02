@@ -26,12 +26,21 @@ debug_color = Color(0, 0.649872, 0.123991, 0.42)
 [node name="BaseAIController" type="Node2D" parent="."]
 script = ExtResource("2_na5lv")
 
+[node name="CliffPityBottomRay" type="RayCast2D" parent="."]
+target_position = Vector2(10, 0)
+
+[node name="CliffPityTopRay" type="RayCast2D" parent="."]
+position = Vector2(0, -3)
+target_position = Vector2(10, 0)
+
 [node name="CoyoteTime" type="Timer" parent="."]
 
-[node name="DebugState" type="Label" parent="."]
+[node name="DebugLayer" type="CanvasLayer" parent="."]
+
+[node name="DebugState" type="Label" parent="DebugLayer"]
 offset_left = -20.0
 offset_top = -36.0
-offset_right = 20.0
+offset_right = 70.0
 offset_bottom = -13.0
 text = "DebugState"
 

@@ -11,7 +11,6 @@ func _on_update(delta):
 			#]
 		#)
 		
-		#print("target has commands")
 		# Add the gravity.
 		if not target.is_on_floor():
 			target.velocity.y += target.gravity * delta
@@ -21,13 +20,13 @@ func _on_update(delta):
 			target.jump()
 
 		# Get the input direction and handle the movement/deceleration.
-		# As good practice, you should replace UI actions with custom gameplay actions.
 		var direction = target.commands.movement
 		if direction != 0.0:
 			target.velocity.x = direction * target.speed
+			# Flip the character based on direction.
+			target.flip(direction)
 		else:
 			target.velocity.x = move_toward(target.velocity.x, 0, target.speed)
-
+			
 		target.move_and_slide()
 		target.commands = null
-	

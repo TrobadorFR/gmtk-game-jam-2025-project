@@ -24,10 +24,11 @@ AIR_SPEED = 450.0
 RISING_GRAVITY = 480.0
 
 [node name="AnimatedSprite2D" parent="." index="0"]
-position = Vector2(0, -45)
-scale = Vector2(0.185408, 0.185409)
+position = Vector2(-0.238724, -0.101402)
+scale = Vector2(0.185, 0.185)
 sprite_frames = SubResource("SpriteFrames_v5shh")
 animation = &"new_animation"
+offset = Vector2(-1.2904, -242.695)
 
 [node name="CollisionBox" parent="." index="1"]
 position = Vector2(-3.5, -45.5)
