@@ -23,8 +23,13 @@ func _on_update(delta):
 		var direction = target.commands.movement
 		if direction != 0.0:
 			target.velocity.x = direction * target.speed
+			
 			# Flip the character based on direction.
 			target.flip(direction)
+			if "Airborne" in active_states:
+				if target.cliff_pity_bottom_ray.is_colliding() and not target.cliff_pity_top_ray.is_colliding():
+					print("CLIFF GRAB!!!!")
+					target.global_position.y += target.cliff_pity_top_ray.position.y - target.cliff_pity_bottom_ray.position.y
 		else:
 			target.velocity.x = move_toward(target.velocity.x, 0, target.speed)
 			

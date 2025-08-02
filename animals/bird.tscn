@@ -33,3 +33,10 @@ offset = Vector2(-1.2904, -242.695)
 [node name="CollisionBox" parent="." index="1"]
 position = Vector2(-3.5, -45.5)
 shape = SubResource("RectangleShape2D_0tjls")
+
+[node name="CliffPityBottomRay" parent="." index="3"]
+target_position = Vector2(48, 0)
+
+[node name="CliffPityTopRay" parent="." index="4"]
+position = Vector2(0, -5)
+target_position = Vector2(48, 0)

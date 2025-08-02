@@ -13,6 +13,11 @@ extends CharacterBody2D
 ## AI controller. Enabled by default on every character, should be on if no 
 ## other controller is active. Managed by CharacterManager.
 @onready var ai_controller := $BaseAIController
+## Raycasts for cliff pity. If the bottom ray touches a body and the top 
+## doesn't, Actionable state will detect a cliff and move you a bit to let you 
+## climb up easier.
+@onready var cliff_pity_bottom_ray := $CliffPityBottomRay
+@onready var cliff_pity_top_ray := $CliffPityTopRay
 
 ## Commands received from controller
 var commands : CommandPackage
