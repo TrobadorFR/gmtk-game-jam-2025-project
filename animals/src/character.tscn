@@ -34,6 +34,13 @@ position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_mh6dr")
 debug_color = Color(0, 0.649872, 0.123991, 0.42)
 
+[node name="InteractableRange" type="Area2D" parent="."]
+
+[node name="CollisionBox" type="CollisionShape2D" parent="InteractableRange"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_mh6dr")
+debug_color = Color(0.56, 0.55328, 0.1568, 0.270588)
+
 [node name="BaseAIController" type="Node2D" parent="."]
 script = ExtResource("2_na5lv")
 

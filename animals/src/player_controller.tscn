@@ -1,9 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://dop7dnv405kgo"]
+[gd_scene load_steps=7 format=3 uid="uid://dop7dnv405kgo"]
 
 [ext_resource type="Script" uid="uid://d0cnar444itwl" path="res://animals/src/player_controller.gd" id="1_yq4vc"]
+[ext_resource type="Texture2D" uid="uid://dpt8mct07qluw" path="res://assets/keyboard_v.png" id="2_p7rh4"]
+[ext_resource type="Script" uid="uid://bvjgj0i8mpyan" path="res://animals/src/interaction_prompt.gd" id="3_t5eg6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yq4vc"]
 size = Vector2(228, 110)
+
+[sub_resource type="Animation" id="Animation_p7rh4"]
+resource_name = "fade_in"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t5eg6"]
+_data = {
+&"fade_in": SubResource("Animation_p7rh4")
+}
 
 [node name="PlayerController" type="Node2D"]
 script = ExtResource("1_yq4vc")
@@ -16,3 +26,15 @@ collision_mask = 4
 position = Vector2(0, -55)
 shape = SubResource("RectangleShape2D_yq4vc")
 debug_color = Color(0.818637, 0.244335, 0.798089, 0.42)
+
+[node name="InteractionPrompt" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_p7rh4")
+script = ExtResource("3_t5eg6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InteractionPrompt"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_t5eg6")
+}
