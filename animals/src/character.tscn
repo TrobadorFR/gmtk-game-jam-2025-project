@@ -27,6 +27,8 @@ colors = PackedColorArray(1, 1, 1, 0.607843, 1, 1, 1, 0)
 collision_mask = 10
 script = ExtResource("1_mh6dr")
 
+[node name="SpineSprite" type="SpineSprite" parent="."]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]

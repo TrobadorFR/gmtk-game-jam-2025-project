@@ -1,0 +1,8 @@
+[gd_resource type="SpineSkeletonDataResource" load_steps=3 format=3 uid="uid://cuci0mqr3enpl"]
+
+[ext_resource type="SpineAtlasResource" uid="uid://bn78d3cuc7i17" path="res://assets/animals/worm/warm.atlas" id="1_wn8bm"]
+[ext_resource type="SpineSkeletonFileResource" uid="uid://ccdr7cjv84vgp" path="res://assets/animals/worm/warm.skel" id="2_ffh6m"]
+
+[resource]
+atlas_res = ExtResource("1_wn8bm")
+skeleton_file_res = ExtResource("2_ffh6m")

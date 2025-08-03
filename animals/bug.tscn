@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cw87x21kxtjgo"]
+[gd_scene load_steps=6 format=3 uid="uid://cw87x21kxtjgo"]
 
 [ext_resource type="PackedScene" uid="uid://b64tc37q3gcnw" path="res://animals/src/character.tscn" id="1_jmqbw"]
+[ext_resource type="SpineSkeletonDataResource" uid="uid://de40hx2cnliu0" path="res://assets/animals/bug/bug_spine_skeleton.tres" id="2_1dfhv"]
 [ext_resource type="Texture2D" uid="uid://j12bugae76fc" path="res://assets/beetle-concept.png" id="2_xwaro"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h7adp"]
@@ -21,18 +22,25 @@ size = Vector2(53, 32.75)
 collision_layer = 3
 GROUND_SPEED = 450.0
 
-[node name="AnimatedSprite2D" parent="." index="0"]
+[node name="SpineSprite" parent="." index="0"]
+skeleton_data_res = ExtResource("2_1dfhv")
+preview_skin = "Default"
+preview_animation = "-- Empty --"
+preview_frame = false
+preview_time = 0.0
+
+[node name="AnimatedSprite2D" parent="." index="1"]
 scale = Vector2(0.158, 0.158)
 sprite_frames = SubResource("SpriteFrames_h7adp")
 offset = Vector2(87.3583, -166.387)
 
-[node name="CollisionBox" parent="." index="1"]
+[node name="CollisionBox" parent="." index="2"]
 position = Vector2(0, -16.375)
 shape = SubResource("RectangleShape2D_3y5ta")
 
-[node name="CliffPityBottomRay" parent="." index="3"]
+[node name="CliffPityBottomRay" parent="." index="5"]
 target_position = Vector2(38, 0)
 
-[node name="CliffPityTopRay" parent="." index="4"]
+[node name="CliffPityTopRay" parent="." index="6"]
 position = Vector2(0, -7)
 target_position = Vector2(38, 0)
