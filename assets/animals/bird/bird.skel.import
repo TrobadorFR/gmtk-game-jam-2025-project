@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://clr5yjfsrpdyr"
+path="res://.godot/imported/bird.skel-432c0ede72787fdd025cc61c15f682b8.spskel"
+
+[deps]
+
+source_file="res://assets/animals/bird/bird.skel"
+dest_files=["res://.godot/imported/bird.skel-432c0ede72787fdd025cc61c15f682b8.spskel"]
+
+[params]
+

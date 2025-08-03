@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://cxr0bt1owh5pw"
+path="res://.godot/imported/warm.atlas-20772455b77c5b38cd53849075c3f106.spatlas"
+
+[deps]
+
+source_file="res://assets/animals/worm/warm.atlas"
+dest_files=["res://.godot/imported/warm.atlas-20772455b77c5b38cd53849075c3f106.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

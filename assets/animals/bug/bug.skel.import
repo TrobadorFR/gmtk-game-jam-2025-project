@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://7xd6vu1ulv6"
+path="res://.godot/imported/bug.skel-162177e884583c6abdd57eef099a5120.spskel"
+
+[deps]
+
+source_file="res://assets/animals/bug/bug.skel"
+dest_files=["res://.godot/imported/bug.skel-162177e884583c6abdd57eef099a5120.spskel"]
+
+[params]
+

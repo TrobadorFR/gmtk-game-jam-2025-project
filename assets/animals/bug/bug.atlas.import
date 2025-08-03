@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://d37ieg5j0bh3v"
+path="res://.godot/imported/bug.atlas-b6ce16f8e1754e6b21edaaca6ef97b9b.spatlas"
+
+[deps]
+
+source_file="res://assets/animals/bug/bug.atlas"
+dest_files=["res://.godot/imported/bug.atlas-b6ce16f8e1754e6b21edaaca6ef97b9b.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

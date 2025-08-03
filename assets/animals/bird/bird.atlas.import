@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://digj5mo45c861"
+path="res://.godot/imported/bird.atlas-a5d190fd339abacf77cb3629be21310a.spatlas"
+
+[deps]
+
+source_file="res://assets/animals/bird/bird.atlas"
+dest_files=["res://.godot/imported/bird.atlas-a5d190fd339abacf77cb3629be21310a.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

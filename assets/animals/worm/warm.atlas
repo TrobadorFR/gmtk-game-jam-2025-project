@@ -1,0 +1,26 @@
+warm.png
+size:892,316
+filter:Linear,Linear
+pma:true
+warm_body
+bounds:0,0,891,313
+warm_eye
+bounds:80,8,42,35
+warm_eye_bg
+bounds:0,287,36,26
+warm_mouth_1
+bounds:398,43,41,66
+warm_mouth_2
+bounds:170,45,95,60
+warm_mouth_3
+bounds:266,12,55,97
+warm_mouth_4
+bounds:0,35,79,84
+warm_sclera
+bounds:123,13,29,30
+warm_teeth_low
+bounds:322,36,75,70
+warm_teeth_top
+bounds:80,44,89,74
+Слой 46
+bounds:0,3,66,31
