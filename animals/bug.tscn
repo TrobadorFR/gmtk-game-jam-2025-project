@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cw87x21kxtjgo"]
+[gd_scene load_steps=9 format=3 uid="uid://cw87x21kxtjgo"]
 
 [ext_resource type="PackedScene" uid="uid://b64tc37q3gcnw" path="res://animals/src/character.tscn" id="1_jmqbw"]
 [ext_resource type="SpineSkeletonDataResource" uid="uid://de40hx2cnliu0" path="res://assets/animals/bug/bug_spine_skeleton.tres" id="2_1dfhv"]
 [ext_resource type="Script" uid="uid://b7slsdvr2pqrq" path="res://animals/bug.gd" id="2_h7adp"]
 [ext_resource type="Texture2D" uid="uid://j12bugae76fc" path="res://assets/beetle-concept.png" id="2_xwaro"]
+[ext_resource type="AudioStream" uid="uid://bueymgiyxa0n" path="res://assets/sound/sfx/bug_sfx/bug_walk_sfx_1.ogg" id="5_2pjj3"]
+[ext_resource type="AudioStream" uid="uid://b442rai2to1nd" path="res://assets/sound/sfx/bug_sfx/bug_glide_sfx_1.ogg" id="6_uixx0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h7adp"]
 animations = [{
@@ -46,5 +48,11 @@ target_position = Vector2(38, 0)
 [node name="CliffPityTopRay" parent="." index="6"]
 position = Vector2(0, -7)
 target_position = Vector2(38, 0)
+
+[node name="WalkAudio" parent="." index="12"]
+stream = ExtResource("5_2pjj3")
+
+[node name="JumpAudio" parent="." index="13"]
+stream = ExtResource("6_uixx0")
 
 [connection signal="change_anim" from="." to="." method="_on_change_anim"]
