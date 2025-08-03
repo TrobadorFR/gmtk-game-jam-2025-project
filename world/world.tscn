@@ -1,7 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3tbx18hoxit5"]
+[gd_scene load_steps=3 format=3 uid="uid://b3tbx18hoxit5"]
 
 [ext_resource type="PackedScene" uid="uid://c6sylqveyne31" path="res://world/test_level.tscn" id="1_6xmxd"]
+[ext_resource type="Texture2D" uid="uid://b01dditpbljl4" path="res://assets/world/BG/Gradient.png" id="1_tcf2h"]
 
 [node name="World" type="Node2D"]
+
+[node name="Parallax1" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax1"]
+modulate = Color(0.788235, 1, 0.909804, 1)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_tcf2h")
 
 [node name="TestLevel" parent="." instance=ExtResource("1_6xmxd")]
