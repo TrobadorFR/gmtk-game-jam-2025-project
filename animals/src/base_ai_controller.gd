@@ -9,6 +9,7 @@ var timer_max : float = 1.0
 var direction : float = 0.5
 
 func _ready():
+	var parent = get_parent()
 	current_character = get_parent()
 	super._ready() # Primarily for error handling
 	enabled = true

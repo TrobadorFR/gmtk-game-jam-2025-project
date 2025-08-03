@@ -6,6 +6,8 @@ extends State
 func _on_enter(args):
 	target.gravity = target.FALLING_GRAVITY
 	
+	target.emit_signal("change_anim", "falling")
+	
 	# Are we in coyote time?
 	# Check if we were grounded last frame
 	print(get_previous_active_states())

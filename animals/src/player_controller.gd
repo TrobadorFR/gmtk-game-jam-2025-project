@@ -25,6 +25,7 @@ func _physics_process(_delta: float) -> void:
 	# However, I can't see them, and _process was worse. For now, I'm leaving
 	# this as it is.
 	if enabled:
+		#print("am here")
 		if Input.is_action_just_pressed("gp_jump"):
 			jump_buffer = INPUT_BUFFER_FRAME_COUNT
 		if Input.is_action_just_pressed("gp_action"):

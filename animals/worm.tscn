@@ -30,6 +30,7 @@ preview_skin = "Default"
 preview_animation = "-- Empty --"
 preview_frame = false
 preview_time = 0.0
+scale = Vector2(0.075, 0.075)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 scale = Vector2(0.114, 0.114)
@@ -39,3 +40,5 @@ offset = Vector2(26.5423, -149.607)
 [node name="CollisionBox" parent="." index="2"]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_u7thb")
+
+[connection signal="change_anim" from="." to="." method="_on_change_anim"]

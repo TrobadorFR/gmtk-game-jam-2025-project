@@ -30,6 +30,7 @@ script = ExtResource("1_mh6dr")
 [node name="SpineSprite" type="SpineSprite" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
@@ -92,10 +93,7 @@ scale_amount_min = 0.15
 scale_amount_max = 0.25
 color_ramp = SubResource("Gradient_n1kpo")
 
-[node name="DebugLayer" type="CanvasLayer" parent="."]
-layer = 2
-
-[node name="DebugState" type="Label" parent="DebugLayer"]
+[node name="DebugState" type="Label" parent="."]
 offset_left = -20.0
 offset_top = -36.0
 offset_right = 70.0

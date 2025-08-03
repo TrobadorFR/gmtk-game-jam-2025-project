@@ -22,6 +22,11 @@ extends CharacterBody2D
 ## Detectable Area2D for interactions. We need this reference just so we can
 ## enable or disable it when the player is in control of the character.
 @onready var interactable_range : Area2D = $InteractableRange
+## SpineAnimationState to be animated. Animation is handled on individual character
+## scripts due to different animation sets.
+@onready var anim : SpineAnimationState = $SpineSprite.get_animation_state()
+
+signal change_anim(state: String)
 
 ## Commands received from controller
 var commands : CommandPackage
@@ -61,6 +66,7 @@ func flip(dir) -> void: # do not typehint
 	for node_to_flip in [
 		$AnimatedSprite2D,
 		$CliffPityBottomRay,
-		$CliffPityTopRay
+		$CliffPityTopRay,
+		$SpineSprite
 	]:
 		node_to_flip.scale.x = abs(node_to_flip.scale.x) * sign(dir)
