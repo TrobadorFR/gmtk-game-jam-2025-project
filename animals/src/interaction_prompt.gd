@@ -7,3 +7,6 @@ func fade_in():
 
 func fade_out():
 	anim_player.play("fade_in", -1, -1, true)
+
+func reset():
+	anim_player.play("RESET")

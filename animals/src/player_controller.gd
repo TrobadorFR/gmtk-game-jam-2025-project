@@ -7,12 +7,15 @@ extends Controller
 
 @export var INPUT_BUFFER_FRAME_COUNT : int = 5
 
+@onready var interaction_prompt := $InteractionPrompt
+
+## Counts number of frames left in buffer for gp_jump.
 var jump_buffer : int = 0
+## Counts number of frames left in buffer for gp_action.
 var interact_buffer : int = 0
 
 ## Closest interactable in range. The one that will be targeted for interaction.
 var closest_interactable : Node = null
-
 
 
 func _physics_process(_delta: float) -> void:
@@ -50,21 +53,33 @@ func _physics_process(_delta: float) -> void:
 					new_nearest = thing
 			
 			if new_nearest != closest_interactable:
-				# REMOVE PROMPT FROM PREVIOUS
 				closest_interactable = new_nearest
 				print("New closest_interactable: %s" % new_nearest.get_parent().name)
 				# ADD PROMPT TO NEW
+				interaction_prompt.reparent(closest_interactable)
+				interaction_prompt.fade_in()
+				
 		else:
 			# REMOVE PROMPT FROM PREVIOUS
+			interaction_prompt.reparent(self)
+			interaction_prompt.reset()
+			
 			#dbg
 			if closest_interactable != null:
 				print("New closest_interactable: null")
 			
 			closest_interactable = null
-			
 		
-		#if interact_buffer and closest_interactable:
-			# DO SHIT
+		if interact_buffer and closest_interactable:
+			var parent := closest_interactable.get_parent()
+			if parent is Character:
+				SignalBus.emit_signal("switch_player_character", closest_interactable.get_parent())
+				interact_buffer = 0
+			elif parent is Pickup:
+				print("TODO")
+				interact_buffer = 0
+			else:
+				printerr("ERROR: unhandled interactable %s" % closest_interactable.name)
 		
 		if Input.is_action_just_pressed("dbg_switch_char"):
 			#SignalBus.emit_signal("switch_player_character", null)
