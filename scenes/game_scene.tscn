@@ -28,9 +28,10 @@ script = ExtResource("1_mw25s")
 script = ExtResource("3_bw6k5")
 
 [node name="Bird" parent="CharacterManager" instance=ExtResource("5_b5spy")]
-position = Vector2(485, 370)
+position = Vector2(-305, -23)
 
 [node name="Label" type="Label" parent="CharacterManager/Bird"]
+visible = false
 offset_left = -21.0
 offset_top = -66.0
 offset_right = 19.0
@@ -40,9 +41,10 @@ text = "Bird"
 [node name="PlayerController" parent="CharacterManager/Bird" instance=ExtResource("4_y3j0m")]
 
 [node name="Bug" parent="CharacterManager" instance=ExtResource("4_b5spy")]
-position = Vector2(286, 261)
+position = Vector2(265, -10)
 
 [node name="Label" type="Label" parent="CharacterManager/Bug"]
+visible = false
 offset_left = -16.0
 offset_top = -63.0
 offset_right = 24.0
@@ -50,9 +52,10 @@ offset_bottom = -40.0
 text = "Bug"
 
 [node name="Worm" parent="CharacterManager" instance=ExtResource("5_utbpp")]
-position = Vector2(713, 425)
+position = Vector2(658, -16)
 
 [node name="Label" type="Label" parent="CharacterManager/Worm"]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Worm"
@@ -62,7 +65,7 @@ stream = ExtResource("8_rvs2r")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
-position = Vector2(485, 370)
+position = Vector2(-305, -23)
 process_callback = 0
 editor_draw_limits = true
 
@@ -74,7 +77,7 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(485, 370)
+position = Vector2(-305, -23)
 script = ExtResource("6_kk2rg")
 follow_mode = 2
 follow_target = NodePath("../CharacterManager/Bird")
