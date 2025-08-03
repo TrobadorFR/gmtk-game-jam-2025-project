@@ -22,6 +22,10 @@ func _ready():
 	player_controller.enabled = true
 	
 	starting_character.ai_controller.enabled = false
+	# for whatever reason, monitorable doesn't seem to prevent 
+	# get_overlapping_areas from returning the starting character here
+	# after discussing this on discord it seems like a bug in the engine
+	# TODO: make an issue about it
 	starting_character.interactable_range.set_collision_layer_value(3, false)
 	#starting_character.interactable_range.set_deferred("monitorable", false)
 
