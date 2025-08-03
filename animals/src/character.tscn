@@ -209,4 +209,8 @@ timed = false
 next_state = NodePath("")
 metadata/_custom_type_script = "uid://btqojlh0sgxvh"
 
+[node name="WalkAudio" type="AudioStreamPlayer2D" parent="."]
+
+[node name="JumpAudio" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="timeout" from="CoyoteTime" to="Root/Active/Actionable/Airborne/Falling" method="_on_coyote_time_timeout"]

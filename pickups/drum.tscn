@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://clk01a5li0o35"]
+[gd_scene load_steps=4 format=3 uid="uid://clk01a5li0o35"]
 
 [ext_resource type="PackedScene" uid="uid://fhws012rk24t" path="res://pickups/src/pickup.tscn" id="1_4vwy1"]
 [ext_resource type="Texture2D" uid="uid://vw3einxv5taj" path="res://assets/bird-concept.png" id="2_iepi5"]
+[ext_resource type="AudioStream" uid="uid://ckfv0qin4og1b" path="res://assets/sound/sfx/pickup_sfx/pickup_drum_sfx.ogg" id="3_xxej7"]
 
 [node name="Drum" instance=ExtResource("1_4vwy1")]
 
@@ -9,3 +10,6 @@
 position = Vector2(-5.00001, 0)
 scale = Vector2(0.143281, 0.143281)
 texture = ExtResource("2_iepi5")
+
+[node name="PickupSound" parent="." index="3"]
+stream = ExtResource("3_xxej7")

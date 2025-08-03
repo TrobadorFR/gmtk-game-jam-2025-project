@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://ce1k82dw3dljb"]
+[gd_scene load_steps=4 format=3 uid="uid://ce1k82dw3dljb"]
 
 [ext_resource type="PackedScene" uid="uid://fhws012rk24t" path="res://pickups/src/pickup.tscn" id="1_lwrtd"]
 [ext_resource type="Texture2D" uid="uid://j12bugae76fc" path="res://assets/beetle-concept.png" id="2_8enek"]
+[ext_resource type="AudioStream" uid="uid://0xvpo3x42ujm" path="res://assets/sound/sfx/pickup_sfx/pickup_violin_sfx.ogg" id="3_puf1k"]
 
 [node name="Violin" instance=ExtResource("1_lwrtd")]
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(8, -12)
+position = Vector2(8, 0)
 scale = Vector2(0.14, 0.14)
 texture = ExtResource("2_8enek")
+
+[node name="PickupSound" parent="." index="3"]
+stream = ExtResource("3_puf1k")

@@ -6,6 +6,7 @@ var violin_picked_up : bool = false
 
 func _ready():
 	SignalBus.connect("instrument_picked_up", _on_instrument_picked_up)
+	$AudioStreamPlayer.play()
 
 func _on_instrument_picked_up(instrument: String) -> void:
 	print("PICKED UP %s" % instrument)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://f6rxbf1r4663"]
+[gd_scene load_steps=14 format=3 uid="uid://f6rxbf1r4663"]
 
 [ext_resource type="Script" uid="uid://oypbx7gu8bj2" path="res://scenes/game_scene.gd" id="1_mw25s"]
 [ext_resource type="PackedScene" uid="uid://b3tbx18hoxit5" path="res://world/world.tscn" id="1_w5aja"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_y3j0m"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="6_kk2rg"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_b5spy"]
+[ext_resource type="AudioStream" uid="uid://bp657dmhnwlgc" path="res://assets/sound/sfx/character-switch.ogg" id="8_rvs2r"]
+[ext_resource type="AudioStream" uid="uid://dh8uy7i6y5pog" path="res://assets/sound/music/level_music.ogg" id="11_tcjrq"]
 
 [sub_resource type="Resource" id="Resource_utbpp"]
 script = ExtResource("7_b5spy")
@@ -55,6 +57,9 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Worm"
 
+[node name="SwitchAudio" type="AudioStreamPlayer" parent="CharacterManager"]
+stream = ExtResource("8_rvs2r")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
 position = Vector2(485, 370)
@@ -78,3 +83,7 @@ follow_damping = true
 follow_damping_value = Vector2(0.3, 0.3)
 draw_limits = true
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_tcjrq")
+parameters/looping = true

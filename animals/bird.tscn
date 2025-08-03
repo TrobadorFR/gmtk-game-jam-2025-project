@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://r1uly7p6hn5m"]
+[gd_scene load_steps=8 format=3 uid="uid://r1uly7p6hn5m"]
 
 [ext_resource type="PackedScene" uid="uid://b64tc37q3gcnw" path="res://animals/src/character.tscn" id="1_bj7cx"]
 [ext_resource type="Script" uid="uid://bewewx8q742xf" path="res://animals/bird.gd" id="2_63wqu"]
 [ext_resource type="Texture2D" uid="uid://vw3einxv5taj" path="res://assets/bird-concept.png" id="3_63wqu"]
 [ext_resource type="SpineSkeletonDataResource" uid="uid://dx2wfshv5swar" path="res://assets/animals/bird/bird_spine_skeleton.tres" id="3_p2uco"]
+[ext_resource type="AudioStream" uid="uid://cwh26wu0ejv0j" path="res://assets/sound/sfx/bird_sfx/bird_fly_sfx_1.ogg" id="5_wteep"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v5shh"]
 animations = [{
@@ -49,16 +50,8 @@ target_position = Vector2(48, 0)
 position = Vector2(0, -5)
 target_position = Vector2(48, 0)
 
-[node name="Actionable" parent="Root/Active" index="0"]
-next_state = NodePath("../Acting")
-
-[node name="Grounded" parent="Root/Active/Actionable" index="0"]
-next_state = NodePath("../Airborne")
-
-[node name="Idle" parent="Root/Active/Actionable/Grounded" index="0"]
-next_state = NodePath("../Walking")
-
-[node name="Falling" parent="Root/Active/Actionable/Airborne" index="0"]
-next_state = NodePath("../Rising")
+[node name="WalkAudio" parent="." index="12"]
+stream = ExtResource("5_wteep")
+parameters/looping = true
 
 [connection signal="change_anim" from="." to="." method="_on_change_anim"]

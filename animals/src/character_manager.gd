@@ -58,3 +58,5 @@ func switch_player_character(new_char: Character):
 	old_char.ai_controller.enabled = true
 	old_char.interactable_range.set_collision_layer_value(3, true)
 	#old_char.interactable_range.set_deferred("monitorable", true)
+	
+	$SwitchAudio.play()

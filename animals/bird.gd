@@ -11,5 +11,7 @@ func can_jump():
 func _on_change_anim(state: String) -> void:
 	if state == "idle":
 		anim.set_animation("idle")
+		$WalkAudio.stop()
 	else:
 		anim.set_animation("fly")
+		$WalkAudio.play()
