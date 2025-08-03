@@ -75,12 +75,12 @@ func _physics_process(_delta: float) -> void:
 			var parent := closest_interactable.get_parent()
 			if parent is Character:
 				SignalBus.emit_signal("switch_player_character", closest_interactable.get_parent())
-				interact_buffer = 0
 			elif parent is Pickup:
-				print("TODO")
-				interact_buffer = 0
+				interaction_prompt.reparent(self)
+				parent.activate()
 			else:
 				printerr("ERROR: unhandled interactable %s" % closest_interactable.name)
+			interact_buffer = 0
 		
 		if Input.is_action_just_pressed("dbg_switch_char"):
 			#SignalBus.emit_signal("switch_player_character", null)

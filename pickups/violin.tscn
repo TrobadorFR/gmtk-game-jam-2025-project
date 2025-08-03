@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce1k82dw3dljb"]
+
+[ext_resource type="PackedScene" uid="uid://fhws012rk24t" path="res://pickups/src/pickup.tscn" id="1_lwrtd"]
+[ext_resource type="Texture2D" uid="uid://j12bugae76fc" path="res://assets/beetle-concept.png" id="2_8enek"]
+
+[node name="Violin" instance=ExtResource("1_lwrtd")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(8, -12)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("2_8enek")

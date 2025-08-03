@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp8ltv3uk33jg"]
+
+[ext_resource type="PackedScene" uid="uid://fhws012rk24t" path="res://pickups/src/pickup.tscn" id="1_6f7i4"]
+[ext_resource type="Texture2D" uid="uid://cwhtlx2ic318" path="res://assets/worm-concept.png" id="2_er6ls"]
+
+[node name="Pipe" instance=ExtResource("1_6f7i4")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-7.62939e-06, -8.00002)
+scale = Vector2(0.110274, 0.110274)
+texture = ExtResource("2_er6ls")

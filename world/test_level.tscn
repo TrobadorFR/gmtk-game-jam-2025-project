@@ -1,4 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6sylqveyne31"]
+[gd_scene load_steps=8 format=3 uid="uid://c6sylqveyne31"]
+
+[ext_resource type="PackedScene" uid="uid://clk01a5li0o35" path="res://pickups/drum.tscn" id="1_434qw"]
+[ext_resource type="PackedScene" uid="uid://cp8ltv3uk33jg" path="res://pickups/pipe.tscn" id="2_kfa7i"]
+[ext_resource type="PackedScene" uid="uid://ce1k82dw3dljb" path="res://pickups/violin.tscn" id="3_x27he"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abcqb"]
 size = Vector2(75, 7)
@@ -68,3 +72,12 @@ shape = SubResource("RectangleShape2D_8jkpt")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(923, 544)
 shape = SubResource("CircleShape2D_abcqb")
+
+[node name="Drum" parent="." instance=ExtResource("1_434qw")]
+position = Vector2(81, 870)
+
+[node name="Pipe" parent="." instance=ExtResource("2_kfa7i")]
+position = Vector2(921, 782)
+
+[node name="Violin" parent="." instance=ExtResource("3_x27he")]
+position = Vector2(-441, 710)
