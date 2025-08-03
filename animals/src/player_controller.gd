@@ -42,14 +42,26 @@ func _physics_process(_delta: float) -> void:
 		
 		# Handle interactables
 		var nearby_interactables = $InteractionRange.get_overlapping_areas()
-		if nearby_interactables.size > 0:
-			var new_nearest : Area2D
+		if nearby_interactables.size() > 0:	
+			#find nearest
+			var new_nearest : Area2D = null
 			for thing in nearby_interactables:
-				if (position.distance_to(thing.position) < position.distance_to(closest_interactable.position)):
+				if new_nearest == null or (position.distance_to(thing.position) < position.distance_to(new_nearest.position)):
 					new_nearest = thing
+			
 			if new_nearest != closest_interactable:
+				# REMOVE PROMPT FROM PREVIOUS
 				closest_interactable = new_nearest
-				# DISPLAY PROMPT
+				print("New closest_interactable: %s" % new_nearest.get_parent().name)
+				# ADD PROMPT TO NEW
+		else:
+			# REMOVE PROMPT FROM PREVIOUS
+			#dbg
+			if closest_interactable != null:
+				print("New closest_interactable: null")
+			
+			closest_interactable = null
+			
 		
 		#if interact_buffer and closest_interactable:
 			# DO SHIT

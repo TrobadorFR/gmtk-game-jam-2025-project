@@ -35,6 +35,8 @@ shape = SubResource("RectangleShape2D_mh6dr")
 debug_color = Color(0, 0.649872, 0.123991, 0.42)
 
 [node name="InteractableRange" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionBox" type="CollisionShape2D" parent="InteractableRange"]
 position = Vector2(0, -10)

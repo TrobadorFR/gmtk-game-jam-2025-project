@@ -22,6 +22,8 @@ func _ready():
 	player_controller.enabled = true
 	
 	starting_character.ai_controller.enabled = false
+	starting_character.interactable_range.set_collision_layer_value(3, false)
+	#starting_character.interactable_range.set_deferred("monitorable", false)
 
 var dbg_char := 0
 func dbg_switch_char():
@@ -35,6 +37,8 @@ func switch_player_character(new_char: Character):
 	
 	# disable ai on new char
 	new_char.ai_controller.enabled = false
+	new_char.interactable_range.set_collision_layer_value(3, false)
+	#new_char.interactable_range.set_deferred("monitorable", false)
 	
 	# switch the player controller's associations
 	player_controller.reparent(new_char)
@@ -48,3 +52,5 @@ func switch_player_character(new_char: Character):
 	
 	# reactivate ai on old char
 	old_char.ai_controller.enabled = true
+	old_char.interactable_range.set_collision_layer_value(3, true)
+	#old_char.interactable_range.set_deferred("monitorable", true)

@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var GROUND_SPEED = 300.0
 @export var AIR_SPEED = 300.0
 @export var JUMP_VELOCITY = -400.0
-#@export var RISING_GRAVITY = 980.0
+@export var RISING_GRAVITY = 980.0
 @export var FALLING_GRAVITY = 980.0
 @export var COYOTE_TIME_DURATION = 0.2
 @export var FASTFALL_GRAVITY_MODIFIER = 2.0
@@ -19,6 +19,9 @@ extends CharacterBody2D
 ## climb up easier.
 @onready var cliff_pity_bottom_ray := $CliffPityBottomRay
 @onready var cliff_pity_top_ray := $CliffPityTopRay
+## Detectable Area2D for interactions. We need this reference just so we can
+## enable or disable it when the player is in control of the character.
+@onready var interactable_range : Area2D = $InteractableRange
 
 ## Commands received from controller
 var commands : CommandPackage

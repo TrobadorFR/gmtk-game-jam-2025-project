@@ -21,7 +21,6 @@ size = Vector2(63, 91)
 [node name="Bird" instance=ExtResource("1_bj7cx")]
 script = ExtResource("2_63wqu")
 AIR_SPEED = 450.0
-RISING_GRAVITY = 480.0
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 position = Vector2(-0.238724, -0.101402)
@@ -34,32 +33,9 @@ offset = Vector2(-1.2904, -242.695)
 position = Vector2(-3.5, -45.5)
 shape = SubResource("RectangleShape2D_0tjls")
 
-[node name="CliffPityBottomRay" parent="." index="3"]
+[node name="CliffPityBottomRay" parent="." index="4"]
 target_position = Vector2(48, 0)
 
-[node name="CliffPityTopRay" parent="." index="4"]
+[node name="CliffPityTopRay" parent="." index="5"]
 position = Vector2(0, -5)
 target_position = Vector2(48, 0)
-
-[node name="Actionable" parent="Root/Active" index="0"]
-next_state = NodePath("../Acting")
-
-[node name="Grounded" parent="Root/Active/Actionable" index="0"]
-next_state = NodePath("../Airborne")
-
-[node name="Idle" parent="Root/Active/Actionable/Grounded" index="0"]
-disabled = false
-debug_mode = false
-target_path = NodePath("")
-timed = false
-next_state = NodePath("../Walking")
-
-[node name="Walking" parent="Root/Active/Actionable/Grounded" index="1"]
-disabled = false
-debug_mode = false
-target_path = NodePath("")
-timed = false
-next_state = NodePath("")
-
-[node name="Falling" parent="Root/Active/Actionable/Airborne" index="0"]
-next_state = NodePath("../Rising")
