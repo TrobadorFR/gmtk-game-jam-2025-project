@@ -135,7 +135,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("../Acting")
+next_state = NodePath("")
 metadata/_custom_type_script = "uid://btqojlh0sgxvh"
 
 [node name="Grounded" type="Node" parent="Root/Active/Actionable"]
@@ -144,7 +144,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("../Airborne")
+next_state = NodePath("")
 metadata/_custom_type_script = "uid://btqojlh0sgxvh"
 
 [node name="Idle" type="Node" parent="Root/Active/Actionable/Grounded"]
@@ -153,7 +153,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("../Walking")
+next_state = NodePath("")
 metadata/_custom_type_script = "uid://btqojlh0sgxvh"
 
 [node name="Walking" type="Node" parent="Root/Active/Actionable/Grounded"]
@@ -180,7 +180,7 @@ disabled = false
 debug_mode = false
 target_path = NodePath("")
 timed = false
-next_state = NodePath("../Rising")
+next_state = NodePath("")
 metadata/_custom_type_script = "uid://btqojlh0sgxvh"
 
 [node name="Rising" type="Node" parent="Root/Active/Actionable/Airborne"]
