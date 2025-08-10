@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b3tbx18hoxit5"]
 
 [ext_resource type="Texture2D" uid="uid://b01dditpbljl4" path="res://assets/world/BG/Gradient.png" id="1_tcf2h"]
-[ext_resource type="PackedScene" uid="uid://87haytjld4rg" path="res://world/level.tscn" id="2_tcf2h"]
+[ext_resource type="PackedScene" uid="uid://nuoto412hn3c" path="res://level.tscn" id="2_tcf2h"]
 
 [node name="World" type="Node2D"]
 
@@ -14,4 +14,4 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_tcf2h")
 
-[node name="untitled" parent="." instance=ExtResource("2_tcf2h")]
+[node name="Level" parent="." instance=ExtResource("2_tcf2h")]
