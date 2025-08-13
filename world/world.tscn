@@ -6,7 +6,6 @@
 [node name="World" type="Node2D"]
 
 [node name="Parallax1" type="Parallax2D" parent="."]
-visible = false
 scroll_scale = Vector2(0, 0)
 
 [node name="TextureRect" type="TextureRect" parent="Parallax1"]
