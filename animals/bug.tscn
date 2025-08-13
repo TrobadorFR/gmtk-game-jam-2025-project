@@ -19,10 +19,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3y5ta"]
-size = Vector2(53, 32.75)
+size = Vector2(136, 166)
 
 [node name="Bug" instance=ExtResource("1_jmqbw")]
-collision_layer = 3
+position = Vector2(-1, 11)
 script = ExtResource("2_h7adp")
 
 [node name="SpineSprite" parent="." index="0"]
@@ -31,7 +31,7 @@ preview_skin = "Default"
 preview_animation = "-- Empty --"
 preview_frame = false
 preview_time = 0.0
-scale = Vector2(0.08, 0.08)
+scale = Vector2(0.4, 0.4)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 scale = Vector2(0.158, 0.158)
@@ -39,15 +39,27 @@ sprite_frames = SubResource("SpriteFrames_h7adp")
 offset = Vector2(87.3583, -166.387)
 
 [node name="CollisionBox" parent="." index="2"]
-position = Vector2(0, -16.375)
+position = Vector2(3, -83)
 shape = SubResource("RectangleShape2D_3y5ta")
 
 [node name="CliffPityBottomRay" parent="." index="5"]
-target_position = Vector2(38, 0)
+target_position = Vector2(120, 0)
 
 [node name="CliffPityTopRay" parent="." index="6"]
 position = Vector2(0, -7)
-target_position = Vector2(38, 0)
+target_position = Vector2(120, 0)
+
+[node name="Actionable" parent="Root/Active" index="0"]
+next_state = NodePath("../Acting")
+
+[node name="Grounded" parent="Root/Active/Actionable" index="0"]
+next_state = NodePath("../Airborne")
+
+[node name="Idle" parent="Root/Active/Actionable/Grounded" index="0"]
+next_state = NodePath("../Walking")
+
+[node name="Falling" parent="Root/Active/Actionable/Airborne" index="0"]
+next_state = NodePath("../Rising")
 
 [node name="WalkAudio" parent="." index="12"]
 stream = ExtResource("5_2pjj3")

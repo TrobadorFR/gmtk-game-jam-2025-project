@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b64tc37q3gcnw"]
+[gd_scene load_steps=18 format=3 uid="uid://b64tc37q3gcnw"]
 
 [ext_resource type="Script" uid="uid://xq6maw2qhs0d" path="res://animals/src/character.gd" id="1_mh6dr"]
 [ext_resource type="Script" uid="uid://depx5bfveeqe7" path="res://animals/src/base_ai_controller.gd" id="2_na5lv"]
@@ -15,6 +15,9 @@
 [ext_resource type="Script" uid="uid://3iyd47r8yh05" path="res://animals/src/walking.gd" id="9_6ptc7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mh6dr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1kpo"]
+size = Vector2(180, 86)
 
 [sub_resource type="Gradient" id="Gradient_3eklg"]
 offsets = PackedFloat32Array(0.169014, 1)
@@ -42,8 +45,8 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionBox" type="CollisionShape2D" parent="InteractableRange"]
-position = Vector2(0, -10)
-shape = SubResource("RectangleShape2D_mh6dr")
+position = Vector2(0, -43)
+shape = SubResource("RectangleShape2D_n1kpo")
 debug_color = Color(0.56, 0.55328, 0.1568, 0.270588)
 
 [node name="BaseAIController" type="Node2D" parent="."]

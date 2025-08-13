@@ -28,6 +28,7 @@ func _ready():
 	# TODO: make an issue about it
 	starting_character.interactable_range.set_collision_layer_value(3, false)
 	#starting_character.interactable_range.set_deferred("monitorable", false)
+	camera.zoom = starting_character.CAMERA_ZOOM
 
 var dbg_char := 0
 func dbg_switch_char():
@@ -53,6 +54,7 @@ func switch_player_character(new_char: Character):
 	
 	# Follow new character
 	camera.follow_target = new_char
+	camera.zoom = new_char.CAMERA_ZOOM
 	
 	# reactivate ai on old char
 	old_char.ai_controller.enabled = true

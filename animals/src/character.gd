@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var FALLING_GRAVITY = 980.0
 @export var COYOTE_TIME_DURATION = 0.2
 @export var FASTFALL_GRAVITY_MODIFIER = 2.0
+@export var CAMERA_ZOOM : Vector2 = Vector2(0.6,0.6)
 #@export var CLIFF_PITY_LENIENCY = 10.0
 
 ## AI controller. Enabled by default on every character, should be on if no 

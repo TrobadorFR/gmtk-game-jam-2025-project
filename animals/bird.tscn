@@ -18,11 +18,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tjls"]
-size = Vector2(63, 91)
+size = Vector2(223, 390)
 
 [node name="Bird" instance=ExtResource("1_bj7cx")]
 script = ExtResource("2_63wqu")
 AIR_SPEED = 450.0
+CAMERA_ZOOM = Vector2(0.5, 0.5)
 
 [node name="SpineSprite" parent="." index="0"]
 skeleton_data_res = ExtResource("3_p2uco")
@@ -30,7 +31,8 @@ preview_skin = "Default"
 preview_animation = "-- Empty --"
 preview_frame = false
 preview_time = 0.0
-scale = Vector2(0.175, 0.175)
+position = Vector2(-32, 52)
+scale = Vector2(0.8, 0.8)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(-0.238724, -0.101402)
@@ -40,15 +42,15 @@ animation = &"new_animation"
 offset = Vector2(-1.2904, -242.695)
 
 [node name="CollisionBox" parent="." index="2"]
-position = Vector2(-3.5, -45.5)
+position = Vector2(0, -196)
 shape = SubResource("RectangleShape2D_0tjls")
 
 [node name="CliffPityBottomRay" parent="." index="5"]
-target_position = Vector2(48, 0)
+target_position = Vector2(150, 0)
 
 [node name="CliffPityTopRay" parent="." index="6"]
 position = Vector2(0, -5)
-target_position = Vector2(48, 0)
+target_position = Vector2(150, 0)
 
 [node name="WalkAudio" parent="." index="12"]
 stream = ExtResource("5_wteep")

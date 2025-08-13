@@ -28,7 +28,7 @@ script = ExtResource("1_mw25s")
 script = ExtResource("3_bw6k5")
 
 [node name="Bird" parent="CharacterManager" instance=ExtResource("5_b5spy")]
-position = Vector2(771, -205)
+position = Vector2(780, -137)
 
 [node name="Label" type="Label" parent="CharacterManager/Bird"]
 visible = false
@@ -41,7 +41,7 @@ text = "Bird"
 [node name="PlayerController" parent="CharacterManager/Bird" instance=ExtResource("4_y3j0m")]
 
 [node name="Bug" parent="CharacterManager" instance=ExtResource("4_b5spy")]
-position = Vector2(1341, -192)
+position = Vector2(1350, -124)
 
 [node name="Label" type="Label" parent="CharacterManager/Bug"]
 visible = false
@@ -52,7 +52,7 @@ offset_bottom = -40.0
 text = "Bug"
 
 [node name="Worm" parent="CharacterManager" instance=ExtResource("5_utbpp")]
-position = Vector2(1734, -198)
+position = Vector2(1743, -130)
 
 [node name="Label" type="Label" parent="CharacterManager/Worm"]
 visible = false
@@ -65,7 +65,8 @@ stream = ExtResource("8_rvs2r")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
-position = Vector2(771, -205)
+position = Vector2(780, -537)
+zoom = Vector2(0.6, 0.6)
 process_callback = 0
 editor_draw_limits = true
 
@@ -77,11 +78,13 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(771, -205)
+position = Vector2(780, -537)
 script = ExtResource("6_kk2rg")
 follow_mode = 2
 follow_target = NodePath("../CharacterManager/Bird")
+zoom = Vector2(0.6, 0.6)
 tween_resource = SubResource("Resource_utbpp")
+follow_offset = Vector2(0, -400)
 follow_damping = true
 follow_damping_value = Vector2(0.3, 0.3)
 draw_limits = true

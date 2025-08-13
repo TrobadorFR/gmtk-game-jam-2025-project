@@ -18,12 +18,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u7thb"]
-size = Vector2(35, 17)
+size = Vector2(182, 56)
 
 [node name="Worm" instance=ExtResource("1_d3nak")]
 script = ExtResource("2_8w0hs")
 AIR_SPEED = 75.0
 FALLING_GRAVITY = 480.0
+CAMERA_ZOOM = Vector2(0.8, 0.8)
 
 [node name="SpineSprite" parent="." index="0"]
 skeleton_data_res = ExtResource("3_78get")
@@ -31,7 +32,8 @@ preview_skin = "Default"
 preview_animation = "-- Empty --"
 preview_frame = false
 preview_time = 0.0
-scale = Vector2(0.075, 0.075)
+position = Vector2(1, 9)
+scale = Vector2(0.345, 0.345)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 scale = Vector2(0.114, 0.114)
@@ -39,8 +41,14 @@ sprite_frames = SubResource("SpriteFrames_pq0ow")
 offset = Vector2(26.5423, -149.607)
 
 [node name="CollisionBox" parent="." index="2"]
-position = Vector2(0, -8)
+position = Vector2(0, -28)
 shape = SubResource("RectangleShape2D_u7thb")
+
+[node name="CliffPityBottomRay" parent="." index="5"]
+target_position = Vector2(120, 0)
+
+[node name="CliffPityTopRay" parent="." index="6"]
+target_position = Vector2(120, 0)
 
 [node name="WalkAudio" parent="." index="12"]
 stream = ExtResource("5_78get")
